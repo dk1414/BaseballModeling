@@ -1,0 +1,211 @@
+
+{
+    "events": {
+        "categorical": "True",
+        "label": "True",
+        "value_map": {
+            "force_out": "field_out",
+            "grounded_into_double_play": "field_out",
+            "field_error": "field_out",
+            "sac_fly": "field_out",
+            "double_play": "field_out",
+            "fielders_choice": "field_out",
+            "fielders_choice_out": "field_out",
+            "strikeout_double_play": "strikeout",
+            "intent_walk": "walk",
+            "other_out": "field_out",
+            "sac_fly_double_play": "field_out",
+            "wild_pitch": "B",
+            "triple_play": "field_out",
+            "sac_bunt_double_play": "field_out"
+        },
+
+        "drop_values": ["sac_bunt", "catcher_interf", "pickoff_1b", "pickoff_2b", "pickoff_caught_stealing_2b", "pickoff_3b", "pickoff_caught_stealing_3b", "pickoff_caught_stealing_home", "game_advisory", "ejection", "runner_double_play", "pickoff_error_3b", "pickoff_error_2b"],
+        "missing_value_strategy": "drop"
+
+    },
+
+    "launch_speed": {
+        "label": "True",
+        "standardize": "True",
+        "missing_value_strategy": 0
+    },
+
+    "pitch_type": {
+        "categorical": "True",
+        "missing_value_strategy": "mode",
+        "drop_values": ["IN", "AB"]
+    },
+
+    "game_date": {
+        "metadata": "True",
+        "missing_value_strategy": "drop",
+        "datetime_format": "%Y-%m-%d"
+    },
+
+    "release_speed": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "release_pos_x": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "release_pos_z": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "batter": {
+        "metadata": "True",
+        "missing_value_strategy": 0
+    },
+
+    "pitcher": {
+        "metadata": "True",
+        "missing_value_strategy": 0
+    },
+
+    "stand": {
+        "categorical": "True",
+        "missing_value_strategy": "mode"
+    },
+
+    "p_throws": {
+        "categorical": "True",
+        "missing_value_strategy": "mode"
+    },
+
+    "hit_location": {
+        "label": "True",
+        "categorical": "True",
+        "missing_value_strategy": 0
+    },
+
+    "balls": {
+        "categorical": "True",
+        "missing_value_strategy": "mode"
+    },
+
+    "strikes": {
+        "categorical": "True",
+        "missing_value_strategy": "mode",
+        "drop_values": [3]
+    },
+
+    "pfx_x": {
+        "standardize": "True",
+        "missing_value_strategy": "mean"
+    },
+
+    "pfx_z": {
+        "standardize": "True",
+        "missing_value_strategy": "mean"
+    },
+
+    "plate_x": {
+        "standardize": "True",
+        "missing_value_strategy": "mean"
+    },
+
+    "plate_z": {
+        "standardize": "True",
+        "missing_value_strategy": "mean"
+    },
+
+    "outs_when_up": {
+        "categorical": "True",
+        "missing_value_strategy": 0
+    },
+
+    "hc_x": {
+        "label": "True",
+        "standardize": "True",
+        "missing_value_strategy": 0
+    },
+
+    "hc_y": {
+        "label": "True",
+        "standardize": "True",
+        "missing_value_strategy": 0
+    },
+
+    "vy0": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "vz0": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "ax": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "ay": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "az": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "sz_top": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "sz_bot": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "launch_angle": {
+        "label": "True",
+        "standardize": "True",
+        "missing_value_strategy": -90
+    },
+
+    "release_spin_rate": {
+        "standardize": "True",
+        "missing_value_strategy": "mean"
+    },
+
+    "release_extension": {
+        "standardize": "True",
+        "missing_value_strategy": "mean"
+    },
+
+    "game_pk": {
+        "metadata": "True",
+        "missing_value_strategy": 0
+    },
+
+    "release_pos_y": {
+        "standardize": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "at_bat_number": {
+        "metadata": "True",
+        "missing_value_strategy": "drop"
+    },
+
+    "batter_name": {
+        "metadata": "True",
+        "missing_value_strategy": "NA"
+    },
+
+    "pitcher_name": {
+        "metadata": "True",
+        "missing_value_strategy": "NA"
+    }
+
+}

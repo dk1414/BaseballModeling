@@ -1,0 +1,14 @@
+{
+    "num_heads": 1,
+    "num_encoder_layers": 1,
+    "hidden_dim": 20,
+    "sequence_length": 60,
+    "dropout": 0.1,
+    "batch_size": 32,
+    "weight_param": 0.5,
+    "num_epochs": 3,
+    "model_save_dir": "model_output",
+    "config_path": "../data/config.json",
+    "train_data_path": "../data/statcast_mini_cleaned.csv",
+    "valid_data_path": "../data/statcast_mini_cleaned.csv"
+}
