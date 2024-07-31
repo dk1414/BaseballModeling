@@ -151,16 +151,26 @@ def main(train_config_path):
     train_path = train_config["train_data_path"]
     valid_path = train_config["valid_data_path"]
 
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    print(f"Device: {device}")
+
+    print("Loading Data")
 
     train_data = pd.read_csv(train_path)
     valid_data = pd.read_csv(valid_path)
 
+    print(f"Train Shape: {train_data.shape}")
+    print(f"Valid Shape: {valid_data.shape}")
+
+    print("Creating Datasets")
+
     #Create datasets
     train_dataset = BaseballDataset(train_data,config_path,sequence_length)
     valid_dataset = BaseballDataset(valid_data,config_path,sequence_length)
-
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=False)
+    
+    print("Creating Dataloaders")
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=8)
+    val_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=False, num_workers=6)
 
 
     # Hyperparameters
@@ -173,14 +183,14 @@ def main(train_config_path):
     criterion = CustomLoss(loss_weight_param)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Device: {device}")
+
     model.to(device)
 
     train_losses = []
     val_losses = []
 
     for epoch in range(num_epochs):
+        print(f"Starting epoch: {epoch}")
         train_loss = train_one_epoch(model, train_loader, criterion, optimizer, device)
         val_loss = evaluate(model, val_loader, criterion, device)
         train_losses.append(train_loss)
