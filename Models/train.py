@@ -151,7 +151,8 @@ def main(train_config_path):
     train_path = train_config["train_data_path"]
     valid_path = train_config["valid_data_path"]
 
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
     print(f"Device: {device}")
 
     print("Loading Data")
@@ -170,7 +171,7 @@ def main(train_config_path):
     
     print("Creating Dataloaders")
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=8)
-    val_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=False, num_workers=6)
+    val_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=False, num_workers=8)
 
 
     # Hyperparameters
@@ -179,7 +180,10 @@ def main(train_config_path):
     
 
     # Initialize the model, loss function, and optimizer
-    model = TransformerModel(input_dim, num_heads, num_encoder_layers, hidden_dim, output_dim, sequence_length, dropout)
+    model = nn.DataParallel(TransformerModel(input_dim, num_heads, num_encoder_layers, hidden_dim, output_dim, sequence_length, dropout))
+
+    print(f"# Params: {sum(p.numel() for p in model.parameters() if p.requires_grad)}")
+    
     criterion = CustomLoss(loss_weight_param)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
