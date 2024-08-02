@@ -153,23 +153,24 @@ def main(train_config_path):
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    print(f"Device: {device}")
+    print(f"Device: {device}", flush=True)
+    
 
-    print("Loading Data")
+    print("Loading Data", flush=True)
 
     train_data = pd.read_csv(train_path)
     valid_data = pd.read_csv(valid_path)
 
-    print(f"Train Shape: {train_data.shape}")
-    print(f"Valid Shape: {valid_data.shape}")
+    print(f"Train Shape: {train_data.shape}", flush=True)
+    print(f"Valid Shape: {valid_data.shape}", flush=True)
 
-    print("Creating Datasets")
+    print("Creating Datasets", flush=True)
 
     #Create datasets
     train_dataset = BaseballDataset(train_data,config_path,sequence_length)
     valid_dataset = BaseballDataset(valid_data,config_path,sequence_length)
     
-    print("Creating Dataloaders")
+    print("Creating Dataloaders", flush=True)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=8)
     val_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=False, num_workers=8)
 
@@ -182,11 +183,11 @@ def main(train_config_path):
     # Initialize the model, loss function, and optimizer
     model = nn.DataParallel(TransformerModel(input_dim, num_heads, num_encoder_layers, hidden_dim, output_dim, sequence_length, dropout))
 
-    print(f"# Params: {sum(p.numel() for p in model.parameters() if p.requires_grad)}")
+
+    print(f"# Params: {sum(p.numel() for p in model.parameters() if p.requires_grad)}", flush=True)
     
     criterion = CustomLoss(loss_weight_param)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
-
 
     model.to(device)
 
@@ -194,12 +195,12 @@ def main(train_config_path):
     val_losses = []
 
     for epoch in range(num_epochs):
-        print(f"Starting epoch: {epoch}")
+        print(f"Starting epoch: {epoch}", flush=True)
         train_loss = train_one_epoch(model, train_loader, criterion, optimizer, device)
         val_loss = evaluate(model, val_loader, criterion, device)
         train_losses.append(train_loss)
         val_losses.append(val_loss)
-        print(f"Epoch {epoch + 1}/{num_epochs}, Train Loss: {train_loss}, Val Loss: {val_loss}")
+        print(f"Epoch {epoch + 1}/{num_epochs}, Train Loss: {train_loss}, Val Loss: {val_loss}", flush=True)
     
 
     # Create directory to save model and plot
@@ -207,10 +208,10 @@ def main(train_config_path):
     
     # Save the model
     torch.save(model.state_dict(), model_save_path)
-    print(f"Model saved to {model_save_path}")
+    print(f"Model saved to {model_save_path}", flush=True)
 
     plot_loss(train_losses,val_losses,loss_plot_path)
-    print(f"Loss Plot saved to {loss_plot_path}")
+    print(f"Loss Plot saved to {loss_plot_path}", flush=True)
 
 if __name__ == "__main__":
 
