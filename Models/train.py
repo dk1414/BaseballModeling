@@ -72,9 +72,15 @@ class CustomLoss(nn.Module):
         # Continuous target loss (MSE)
         mse_loss = F.mse_loss(output[:, :target_continuous.size(1)], target_continuous)
         
-        # Categorical target loss (Cross-Entropy)
-        cross_entropy_loss = F.cross_entropy(output[:, target_continuous.size(1):], target_categorical.type(torch.float))
+        # Categorical target loss (Cross-Entropy) for each categorical feature
+        cross_entropy_loss = 0
+        start_idx = target_continuous.size(1)
+        for cat_target in target_categorical:
+            end_idx = start_idx + cat_target.size(1)
+            cross_entropy_loss += F.cross_entropy(output[:, start_idx:end_idx], cat_target.argmax(dim=1))
+            start_idx = end_idx
         
+
         # Weighted sum of the losses
         loss = (self.weight_param * mse_loss) + ((1 - self.weight_param) * cross_entropy_loss)
         return loss
@@ -87,11 +93,12 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device):
     model.train()
     total_loss = 0
     for sequence_tensor, cont_target_tensor, cat_target_tensor in train_loader:
-        sequence_tensor, cont_target_tensor, cat_target_tensor = sequence_tensor.to(device), cont_target_tensor.to(device), cat_target_tensor.to(device)
+        sequence_tensor, cont_target_tensor = sequence_tensor.to(device), cont_target_tensor.to(device)
+        cat_targets = [t.to(device) for t in cat_target_tensor]
 
         optimizer.zero_grad()
         output = model(sequence_tensor)
-        loss = criterion(output, cont_target_tensor, cat_target_tensor)
+        loss = criterion(output, cont_target_tensor, cat_targets)
         loss.backward()
         optimizer.step()
         total_loss += loss.item()
@@ -103,9 +110,10 @@ def evaluate(model, val_loader, criterion, device):
 
     with torch.no_grad():
         for sequence_tensor, cont_target_tensor, cat_target_tensor in val_loader:
-            sequence_tensor, cont_target_tensor, cat_target_tensor = sequence_tensor.to(device), cont_target_tensor.to(device), cat_target_tensor.to(device)
+            sequence_tensor, cont_target_tensor = sequence_tensor.to(device), cont_target_tensor.to(device)
+            cat_targets = [t.to(device) for t in cat_target_tensor]
             output = model(sequence_tensor)
-            loss = criterion(output, cont_target_tensor, cat_target_tensor)
+            loss = criterion(output, cont_target_tensor, cat_targets)
             total_loss += loss.item()
 
     return total_loss / len(val_loader)
@@ -176,8 +184,10 @@ def main(train_config_path):
 
 
     # Hyperparameters
-    input_dim = train_dataset[0][0].shape[1]  # Number of features in a single pitch
-    output_dim = train_dataset[0][1].shape[0] + train_dataset[0][2].shape[0] 
+    train_config["input_dim"] = train_dataset[0][0].shape[1]  # Number of features in a single pitch
+    input_dim = train_config["input_dim"]
+    train_config["output_dim"] = train_dataset[0][1].shape[0] + train_dataset[0][2].shape[0] 
+    output_dim = train_config["output_dim"]
     
 
     # Initialize the model, loss function, and optimizer
@@ -212,6 +222,10 @@ def main(train_config_path):
 
     plot_loss(train_losses,val_losses,loss_plot_path)
     print(f"Loss Plot saved to {loss_plot_path}", flush=True)
+
+    #save config
+    with open(os.path.join(model_save_dir, 'model_config.json'), 'w') as f:
+        json.dump(train_config, f, indent=4)
 
 if __name__ == "__main__":
 

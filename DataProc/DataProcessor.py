@@ -17,6 +17,8 @@ class DataProcessor:
         self.selected_columns = list(self.config.keys())
         self.processed_data = self.raw_data[self.selected_columns].copy()
         self.one_hot = one_hot
+
+        self.scalers = {}  # Dictionary to store scalers for each column
         
         print(f"Selected Columns: {self.selected_columns}")
         print(f'Raw Data Shape: {self.raw_data.shape}')
@@ -79,9 +81,16 @@ class DataProcessor:
         for column, settings in self.config.items():
             if settings.get('standardize', False):
                 self.processed_data[[column]] = scaler.fit_transform(self.processed_data[[column]])
-            elif settings.get('normalize', False):
-                self.processed_data[[column]] = (self.processed_data[column] - self.processed_data[column].min()) / (self.processed_data[column].max() - self.processed_data[column].min())
+                self.scalers[column] = scaler
+
         print(f"Processed Data Shape after standardize_or_normalize: {self.processed_data.shape}")
+    
+    def reverse_standard_scaling(self, data):
+
+        reversed_data = data.copy()
+        for column, scaler in self.scalers.items():
+            reversed_data[column] = (data[column] * scaler.scale_) + scaler.mean_
+        return reversed_data
 
     def one_hot_encode(self):
         categorical_columns = [col for col, settings in self.config.items() if settings.get('categorical', False) and not settings.get('metadata', False)]

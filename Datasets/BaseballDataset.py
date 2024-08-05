@@ -1,38 +1,41 @@
 import torch
 from torch.utils.data import Dataset
-from torch.masked import masked_tensor
 import json
 import pandas
 import numpy as np
 
 
 class BaseballDataset(Dataset):
-    def __init__(self, data, config_path, sequence_length, encode_pos=False, masked_tensor=False, seed=42):
+    def __init__(self, data, config_path, sequence_length,seed=42):
         self.seed = seed
         self.set_seed()
-        self.encode_pos = encode_pos
-        self.masked_tensor = masked_tensor
         self.config = self.load_config(config_path)
 
-        self.data = data
-        if not self.masked_tensor:
-            self.data = self.add_mask_dimensions(data)
+
+        self.data = self.add_mask_dimensions(data)
         
         
         self.sequence_length = sequence_length
+
         self.label_columns = self.get_label_columns()
         self.metadata_columns = self.get_metadata_columns()
         self.categorical_columns = self.get_categorical_columns()
+
         self.mean_values = self.get_mean_values()
+
         self.processed_pitches = []
+        self.pitch_metadata = []
         self.sequences = []
         self.process_all_pitches()
-        self.continuous_label_indices, self.categorical_label_indices = self.get_label_indices()
 
-        if self.masked_tensor:
-            self.mask = self.create_mask()
+        self.continuous_label_indices, self.categorical_label_indices, self.continuous_label_names, self.categorical_label_names = self.get_label_indices()
+        self.all_label_indices = torch.cat((self.continuous_label_indices, *self.categorical_label_indices))
 
+        self.mask = self.create_mask()
         self.prepare_sequences()
+        self.convert_all_pitches_to_tensor()
+ 
+        
     
     def set_seed(self):
         np.random.seed(self.seed)
@@ -66,38 +69,41 @@ class BaseballDataset(Dataset):
         return data
     
     def get_label_indices(self):
-        sample_pitch = self.processed_pitches[0][0]
+        sample_pitch = self.processed_pitches[0]
         categorical_label_indices = []
+        categorical_label_names = []
         continuous_label_indices = []
+        continuous_label_names = []
 
         for key in self.label_columns:
             if key in self.categorical_columns:
+                indices = []
+                names = []
                 for idx, col in enumerate(sample_pitch):
                     if col.startswith(key):
-                        categorical_label_indices.append(idx)
+                        indices.append(idx)
+                        names.append(col)
+                categorical_label_indices.append(torch.LongTensor(indices))
+                categorical_label_names.append(names)
             else:
                 for idx, col in enumerate(sample_pitch):
                     if col == key:
                         continuous_label_indices.append(idx)
+                        continuous_label_names.append(col)
                         
-        return continuous_label_indices, categorical_label_indices
+        return torch.LongTensor(continuous_label_indices), categorical_label_indices, continuous_label_names, categorical_label_names
     
-    def create_mask(self):
 
-        pitch_dim = len(self.processed_pitches[0][0])
-        sequence_mask = torch.ones((self.sequence_length,pitch_dim))
-
-        for i in range(pitch_dim):
-            if i in self.continuous_label_indices or i in self.categorical_label_indices:
-                sequence_mask[-1][i] = 0
-        
-        return sequence_mask == 1
-            
     
     def process_all_pitches(self):
         for index, row in self.data.iterrows():
             pitch_data, pitch_metadata = self.process_pitch(row)
-            self.processed_pitches.append((pitch_data, pitch_metadata))
+            self.processed_pitches.append(pitch_data)
+            self.pitch_metadata.append(pitch_metadata)
+    
+    def convert_all_pitches_to_tensor(self):
+        for i in range(len(self.processed_pitches)):
+            self.processed_pitches[i] = self.pitch_to_tensor(self.processed_pitches[i])
     
     def prepare_sequences(self):
         grouped = self.data.groupby('batter')
@@ -124,20 +130,23 @@ class BaseballDataset(Dataset):
         
         return pitch_data, pitch_metadata
     
-    def mask_values(self, pitch):
+    
+    def pitch_to_tensor(self, pitch):
+        # Convert a single pitch dictionary to a tensor
+        return torch.tensor(list(pitch.values()), dtype=torch.float)
+    
 
-        if not self.masked_tensor: #fill w mean/mode
-
-            for key in self.label_columns:
-                if key in self.categorical_columns:
-                    for col in pitch:
-                        if col.startswith(key):
-                            pitch[col] = 0
-                    pitch[f'{key}_mask'] = 1
-                elif key not in self.metadata_columns:
-                    pitch[key] = self.mean_values[key]
-            return pitch
-
+    def create_mask(self):
+        mask = torch.zeros(len(self.processed_pitches[0]), dtype=torch.float)
+        for idx,name in zip(self.continuous_label_indices,self.continuous_label_names):
+            mask[idx] = self.mean_values[name]
+        for cat_indices,cat_names in zip(self.categorical_label_indices,self.categorical_label_names):
+            for idx,name in zip(cat_indices,cat_names):
+                if name.endswith('_mask'):
+                    mask[idx] = 1
+                else:
+                    mask[idx] = 0  
+        return mask
 
 
     
@@ -149,40 +158,28 @@ class BaseballDataset(Dataset):
 
 
         sequence = []
-        metadata = []
         for i in sequence_indices:
-            sequence.append(self.processed_pitches[i][0].copy())
-            metadata.append(self.processed_pitches[i][1])
-
-        if self.encode_pos:
-            # Add positional encoding
-            for i, pitch in enumerate(sequence):
-                pitch['pos'] = i / self.sequence_length
+            sequence.append(self.processed_pitches[i].clone())
+  
 
         #target is unmasked last pitch in sequence
-        target = sequence[-1].copy()
+        target = sequence[-1].clone()
         
-        if not self.masked_tensor:
-            # Mask the last pitch in the sequence
-            sequence[-1] = self.mask_values(sequence[-1])
+
+        # Mask the last pitch in the sequence
+        sequence[-1][self.all_label_indices] = self.mask[self.all_label_indices]
 
         # Convert to tensor
-        sequence_tensor = self.sequence_to_tensor(sequence)
+        sequence_tensor = torch.stack(sequence)
 
-        if self.masked_tensor:
-            sequence_tensor = masked_tensor(sequence_tensor,self.mask)
 
-        target = self.pitch_to_tensor(target)
-        cont_target_tensor = torch.index_select(target,0,torch.LongTensor(self.continuous_label_indices))
-        cat_target_tensor = torch.index_select(target,0,torch.LongTensor(self.categorical_label_indices))
+        cont_target_tensor = torch.index_select(target,0,self.continuous_label_indices)
+
+        cat_target_tensors = []
+        for cat_indices_tensor in self.categorical_label_indices:
+            cat_target_tensors.append(torch.index_select(target,0,cat_indices_tensor))
+ 
         
-        return sequence_tensor, cont_target_tensor, cat_target_tensor
+        return sequence_tensor, cont_target_tensor, cat_target_tensors
     
-    def sequence_to_tensor(self, sequence):
-        # Convert the list of pitch dictionaries to a tensor
-        sequence_tensor = torch.stack([self.pitch_to_tensor(pitch) for pitch in sequence])
-        return sequence_tensor
     
-    def pitch_to_tensor(self, pitch):
-        # Convert a single pitch dictionary to a tensor, excluding metadata columns
-        return torch.tensor(list(pitch.values()), dtype=torch.float)
