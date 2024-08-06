@@ -60,9 +60,11 @@ def process_data(data_path,config_path):
 
     train_processor = DataProcessor(train, config_path)
     train_data = train_processor.get_processed_data()
+    train_processor.save_scalers("statcast_2015-2023_cleaned_scalers.pkl")
 
     valid_processor = DataProcessor(valid, config_path)
     valid_data = valid_processor.get_processed_data()
+    valid_processor.save_scalers("statcast_2023-2024_cleaned_scalers.pkl")
 
     train_data.to_csv("statcast_2015-2023_cleaned.csv",index=False)
     valid_data.to_csv("statcast_2023-2024_cleaned.csv",index=False)
