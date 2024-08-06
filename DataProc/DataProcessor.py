@@ -3,13 +3,14 @@ import numpy as np
 import json
 from sklearn.preprocessing import StandardScaler
 import warnings
+import pickle
 
 # Suppress pandas warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=pd.errors.SettingWithCopyWarning)
 
 class DataProcessor:
-    def __init__(self, raw_data, config_path, one_hot = True, seed=42):
+    def __init__(self, raw_data, config_path, one_hot=True, seed=42):
         np.random.seed(seed)
 
         self.raw_data = raw_data
@@ -103,10 +104,15 @@ class DataProcessor:
                     print(f"Column '{col}' has {missing_values_count} missing values before encoding.")
             
             # Perform one-hot encoding using pd.get_dummies
-            self.processed_data = pd.get_dummies(data=self.processed_data, columns=categorical_columns, prefix=categorical_columns, drop_first=True)
+            self.processed_data = pd.get_dummies(data=self.processed_data, columns=categorical_columns, prefix=categorical_columns, drop_first=False)
             
 
         print(f"Processed Data Shape after one_hot_encode: {self.processed_data.shape}")
+    
+    def save_scalers(self, file_path):
+        with open(file_path, 'wb') as file:
+            pickle.dump(self.scalers, file)
+        print(f"Scalers saved to {file_path}")
 
 
     def get_processed_data(self):

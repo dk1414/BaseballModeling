@@ -28,12 +28,13 @@ class BaseballDataset(Dataset):
         self.sequences = []
         self.process_all_pitches()
 
-        self.continuous_label_indices, self.categorical_label_indices, self.continuous_label_names, self.categorical_label_names = self.get_label_indices()
-        self.all_label_indices = torch.cat((self.continuous_label_indices, *self.categorical_label_indices))
+        self.continuous_label_indices, self.categorical_label_indices, self.continuous_label_names, self.categorical_label_names, self.mask_indices = self.get_label_indices()
+        self.label_and_mask_indices = torch.cat((self.continuous_label_indices, *self.categorical_label_indices, self.mask_indices))
 
         self.mask = self.create_mask()
         self.prepare_sequences()
         self.convert_all_pitches_to_tensor()
+        self.processed_pitches = torch.stack(self.processed_pitches)
  
         
     
@@ -74,6 +75,7 @@ class BaseballDataset(Dataset):
         categorical_label_names = []
         continuous_label_indices = []
         continuous_label_names = []
+        mask_indices = []
 
         for key in self.label_columns:
             if key in self.categorical_columns:
@@ -81,8 +83,12 @@ class BaseballDataset(Dataset):
                 names = []
                 for idx, col in enumerate(sample_pitch):
                     if col.startswith(key):
-                        indices.append(idx)
-                        names.append(col)
+                        if col.endswith('_mask'):
+                            mask_indices.append(idx)
+                        else:
+                            indices.append(idx)
+                            names.append(col)
+
                 categorical_label_indices.append(torch.LongTensor(indices))
                 categorical_label_names.append(names)
             else:
@@ -91,12 +97,12 @@ class BaseballDataset(Dataset):
                         continuous_label_indices.append(idx)
                         continuous_label_names.append(col)
                         
-        return torch.LongTensor(continuous_label_indices), categorical_label_indices, continuous_label_names, categorical_label_names
+        return torch.LongTensor(continuous_label_indices), categorical_label_indices, continuous_label_names, categorical_label_names, torch.LongTensor(mask_indices)
     
 
     
     def process_all_pitches(self):
-        for index, row in self.data.iterrows():
+        for idx, row in self.data.iterrows():
             pitch_data, pitch_metadata = self.process_pitch(row)
             self.processed_pitches.append(pitch_data)
             self.pitch_metadata.append(pitch_metadata)
@@ -114,7 +120,7 @@ class BaseballDataset(Dataset):
             
             for i in range(len(indices) - self.sequence_length):
                 sequence_indices = indices[i:i + self.sequence_length]
-                self.sequences.append(sequence_indices)
+                self.sequences.append(torch.LongTensor(sequence_indices))
 
  
     
@@ -137,16 +143,32 @@ class BaseballDataset(Dataset):
     
 
     def create_mask(self):
-        mask = torch.zeros(len(self.processed_pitches[0]), dtype=torch.float)
-        for idx,name in zip(self.continuous_label_indices,self.continuous_label_names):
-            mask[idx] = self.mean_values[name]
-        for cat_indices,cat_names in zip(self.categorical_label_indices,self.categorical_label_names):
-            for idx,name in zip(cat_indices,cat_names):
-                if name.endswith('_mask'):
-                    mask[idx] = 1
-                else:
-                    mask[idx] = 0  
+        example_pitch = self.processed_pitches[0]
+        mask = torch.zeros(len(example_pitch), dtype=torch.float)
+
+        for idx,col in enumerate(example_pitch):
+            if col.endswith('_mask'):
+                mask[idx] = 1
+            elif col in self.categorical_label_names:
+                mask[idx] = 0
+            elif col in self.continuous_label_names:
+                mask[idx] = self.mean_values[col]
         return mask
+
+
+
+
+
+
+        # for idx,name in zip(self.continuous_label_indices,self.continuous_label_names):
+        #     mask[idx] = self.mean_values[name]
+        # for cat_indices,cat_names in zip(self.categorical_label_indices,self.categorical_label_names):
+        #     for idx,name in zip(cat_indices,cat_names):
+        #         if name.endswith('_mask'):
+        #             mask[idx] = 1
+        #         else:
+        #             mask[idx] = 0  
+        # return mask
 
 
     
@@ -157,20 +179,15 @@ class BaseballDataset(Dataset):
         sequence_indices = self.sequences[idx]
 
 
-        sequence = []
-        for i in sequence_indices:
-            sequence.append(self.processed_pitches[i].clone())
-  
+        sequence = torch.index_select(self.processed_pitches, 0, sequence_indices).clone()
+        
 
         #target is unmasked last pitch in sequence
         target = sequence[-1].clone()
         
 
         # Mask the last pitch in the sequence
-        sequence[-1][self.all_label_indices] = self.mask[self.all_label_indices]
-
-        # Convert to tensor
-        sequence_tensor = torch.stack(sequence)
+        sequence[-1][self.label_and_mask_indices] = self.mask[self.label_and_mask_indices]
 
 
         cont_target_tensor = torch.index_select(target,0,self.continuous_label_indices)
@@ -180,6 +197,6 @@ class BaseballDataset(Dataset):
             cat_target_tensors.append(torch.index_select(target,0,cat_indices_tensor))
  
         
-        return sequence_tensor, cont_target_tensor, cat_target_tensors
+        return sequence, cont_target_tensor, cat_target_tensors
     
     
