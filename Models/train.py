@@ -186,7 +186,7 @@ def main(train_config_path):
     # Hyperparameters
     train_config["input_dim"] = train_dataset[0][0].shape[1]  # Number of features in a single pitch
     input_dim = train_config["input_dim"]
-    train_config["output_dim"] = train_dataset[0][1].shape[0] + train_dataset[0][2].shape[0] 
+    train_config["output_dim"] = train_dataset[0][1].shape[0] + sum([t.shape[0] for t in train_dataset[0][2]]) 
     output_dim = train_config["output_dim"]
     
 
@@ -217,7 +217,7 @@ def main(train_config_path):
     os.makedirs(model_save_dir, exist_ok=True)
     
     # Save the model
-    torch.save(model.state_dict(), model_save_path)
+    torch.save(model.module.state_dict(), model_save_path)
     print(f"Model saved to {model_save_path}", flush=True)
 
     plot_loss(train_losses,val_losses,loss_plot_path)
