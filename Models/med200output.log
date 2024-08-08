@@ -5,30 +5,30 @@ Train Shape: (5432259, 80)
 Valid Shape: (1110231, 80)
 Creating Datasets
 Creating Dataloaders
-# Params: 64392
+# Params: 94062
 Starting epoch: 0
 /home/dck5549/miniconda3/envs/BaseballEnv/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
 /home/dck5549/miniconda3/envs/BaseballEnv/lib/python3.12/site-packages/torch/nn/modules/linear.py:117: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /opt/conda/conda-bld/pytorch_1720538455419/work/aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
   return F.linear(input, self.weight, self.bias)
-Epoch 1/10, Train Loss: 0.5708374409128861, Val Loss: 0.5214573924689272
+Epoch 1/10, Train Loss: 0.5871764202980427, Val Loss: 0.5293632765313537
 Starting epoch: 1
-Epoch 2/10, Train Loss: 0.5328931666434825, Val Loss: 0.5053430370123392
+Epoch 2/10, Train Loss: 0.5338763418068094, Val Loss: 0.5058148471050948
 Starting epoch: 2
-Epoch 3/10, Train Loss: 0.5266905447327713, Val Loss: 0.5074152422524325
+Epoch 3/10, Train Loss: 0.5275511879683055, Val Loss: 0.5036502140132593
 Starting epoch: 3
-Epoch 4/10, Train Loss: 0.5223442683497166, Val Loss: 0.49756931997140874
+Epoch 4/10, Train Loss: 0.5238206589349937, Val Loss: 0.49847472283919714
 Starting epoch: 4
-Epoch 5/10, Train Loss: 0.5198784196815769, Val Loss: 0.4991542833713149
+Epoch 5/10, Train Loss: 0.5215156811846844, Val Loss: 0.4957973980624938
 Starting epoch: 5
-Epoch 6/10, Train Loss: 0.5179264654928663, Val Loss: 0.493481559893701
+Epoch 6/10, Train Loss: 0.5199177869661139, Val Loss: 0.4959344160910632
 Starting epoch: 6
-Epoch 7/10, Train Loss: 0.5163616391779733, Val Loss: 0.4925506660591939
+Epoch 7/10, Train Loss: 0.518351870981849, Val Loss: 0.4932333638904788
 Starting epoch: 7
-Epoch 8/10, Train Loss: 0.5151088677852432, Val Loss: 0.4889264872279542
+Epoch 8/10, Train Loss: 0.5164315356024353, Val Loss: 0.4936636163394909
 Starting epoch: 8
-Epoch 9/10, Train Loss: 0.5141037357575331, Val Loss: 0.48990976998334423
+Epoch 9/10, Train Loss: 0.515091133730378, Val Loss: 0.49271483188199033
 Starting epoch: 9
-Epoch 10/10, Train Loss: 0.5133290048368133, Val Loss: 0.49025496964946896
-Model saved to small_200_output_updated/transformer_model.pth
-Loss Plot saved to small_200_output_updated/loss_plot.png
+Epoch 10/10, Train Loss: 0.5141951676888156, Val Loss: 0.4916198503275947
+Model saved to med_200_output/transformer_model.pth
+Loss Plot saved to med_200_output/loss_plot.png
