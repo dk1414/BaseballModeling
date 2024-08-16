@@ -148,6 +148,7 @@ def main(train_config_path):
     dropout = train_config["dropout"]
     batch_size = train_config["batch_size"]
     loss_weight_param = train_config["weight_param"]
+    learning_rate = train_config["learning_rate"]
     num_epochs = train_config["num_epochs"]
     model_save_dir = train_config["model_save_dir"]
     model_save_path = os.path.join(model_save_dir, 'transformer_model.pth')
@@ -200,7 +201,7 @@ def main(train_config_path):
     print(f"# Params: {sum(p.numel() for p in model.parameters() if p.requires_grad)}", flush=True)
     
     criterion = CustomLoss(loss_weight_param)
-    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
     model.to(device)
 
