@@ -3,6 +3,7 @@ from torch.utils.data import Dataset
 import json
 import pandas
 import numpy as np
+import random
 
 
 class BaseballDataset(Dataset):
@@ -28,12 +29,13 @@ class BaseballDataset(Dataset):
         self.sequences = []
         self.process_all_pitches()
 
+        self.pitch_col_names = self.get_pitch_col_names()
+
         self.continuous_label_indices, self.categorical_label_indices, self.continuous_label_names, self.categorical_label_names, self.mask_indices = self.get_label_indices()
         self.label_and_mask_indices = torch.cat((self.continuous_label_indices, *self.categorical_label_indices, self.mask_indices))
 
         self.mask = self.create_mask()
         self.prepare_sequences()
-        self.convert_all_pitches_to_tensor()
         self.processed_pitches = torch.stack(self.processed_pitches)
  
         
@@ -41,6 +43,7 @@ class BaseballDataset(Dataset):
     def set_seed(self):
         np.random.seed(self.seed)
         torch.manual_seed(self.seed)
+        random.seed(self.seed)
 
     
     def load_config(self, config_path):
@@ -49,16 +52,16 @@ class BaseballDataset(Dataset):
         return config
     
     def get_label_columns(self):
-        return {column for column, settings in self.config.items() if settings.get('label', False)}
+        return [column for column, settings in self.config.items() if settings.get('label', False)]
     
     def get_metadata_columns(self):
         return {column for column, settings in self.config.items() if settings.get('metadata', False)}
     
     def get_categorical_columns(self):
-        return {column for column, settings in self.config.items() if settings.get('categorical', False)}
+        return [column for column, settings in self.config.items() if settings.get('categorical', False)]
     
     def get_mean_values(self):
-        continuous_label_columns = list(self.label_columns - self.categorical_columns)
+        continuous_label_columns = list(set(self.label_columns) - set(self.categorical_columns))
         return self.data[continuous_label_columns].mean().to_dict()
     
     def add_mask_dimensions(self, data):
@@ -70,18 +73,22 @@ class BaseballDataset(Dataset):
         return data
     
     def get_label_indices(self):
-        sample_pitch = self.processed_pitches[0]
+        col_names = self.pitch_col_names
+
         categorical_label_indices = []
         categorical_label_names = []
+
         continuous_label_indices = []
         continuous_label_names = []
+
         mask_indices = []
+
 
         for key in self.label_columns:
             if key in self.categorical_columns:
                 indices = []
                 names = []
-                for idx, col in enumerate(sample_pitch):
+                for idx, col in enumerate(col_names):
                     if col.startswith(key):
                         if col.endswith('_mask'):
                             mask_indices.append(idx)
@@ -92,7 +99,7 @@ class BaseballDataset(Dataset):
                 categorical_label_indices.append(torch.LongTensor(indices))
                 categorical_label_names.append(names)
             else:
-                for idx, col in enumerate(sample_pitch):
+                for idx, col in enumerate(col_names):
                     if col == key:
                         continuous_label_indices.append(idx)
                         continuous_label_names.append(col)
@@ -104,12 +111,9 @@ class BaseballDataset(Dataset):
     def process_all_pitches(self):
         for idx, row in self.data.iterrows():
             pitch_data, pitch_metadata = self.process_pitch(row)
-            self.processed_pitches.append(pitch_data)
+            self.processed_pitches.append(torch.tensor(pitch_data, dtype=torch.float))
             self.pitch_metadata.append(pitch_metadata)
     
-    def convert_all_pitches_to_tensor(self):
-        for i in range(len(self.processed_pitches)):
-            self.processed_pitches[i] = self.pitch_to_tensor(self.processed_pitches[i])
     
     def prepare_sequences(self):
         grouped = self.data.groupby('batter')
@@ -122,28 +126,33 @@ class BaseballDataset(Dataset):
                 sequence_indices = indices[i:i + self.sequence_length]
                 self.sequences.append(torch.LongTensor(sequence_indices))
 
- 
+
+    def get_pitch_col_names(self):
+        col_names = []
+        for idx, row in self.data.iterrows():
+            for key, value in row.items():
+                if key in self.metadata_columns:
+                    pass
+                else:
+                    col_names.append(key)
+            break
+        return col_names
     
     def process_pitch(self, pitch):
-        pitch_data = {}
-        pitch_metadata = {}
+        pitch_data = []
+        pitch_metadata = []
         
         for key, value in pitch.items():
             if key in self.metadata_columns:
-                pitch_metadata[key] = value
+                pitch_metadata.append(value)
             else:
-                pitch_data[key] = value
+                pitch_data.append(value)
         
         return pitch_data, pitch_metadata
     
     
-    def pitch_to_tensor(self, pitch):
-        # Convert a single pitch dictionary to a tensor
-        return torch.tensor(list(pitch.values()), dtype=torch.float)
-    
-
     def create_mask(self):
-        example_pitch = self.processed_pitches[0]
+        example_pitch = self.pitch_col_names
         mask = torch.zeros(len(example_pitch), dtype=torch.float)
 
         for idx,col in enumerate(example_pitch):
@@ -154,23 +163,6 @@ class BaseballDataset(Dataset):
             elif col in self.continuous_label_names:
                 mask[idx] = self.mean_values[col]
         return mask
-
-
-
-
-
-
-        # for idx,name in zip(self.continuous_label_indices,self.continuous_label_names):
-        #     mask[idx] = self.mean_values[name]
-        # for cat_indices,cat_names in zip(self.categorical_label_indices,self.categorical_label_names):
-        #     for idx,name in zip(cat_indices,cat_names):
-        #         if name.endswith('_mask'):
-        #             mask[idx] = 1
-        #         else:
-        #             mask[idx] = 0  
-        # return mask
-
-
     
     def __len__(self):
         return len(self.sequences)

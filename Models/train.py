@@ -77,7 +77,7 @@ class CustomLoss(nn.Module):
         start_idx = target_continuous.size(1)
         for cat_target in target_categorical:
             end_idx = start_idx + cat_target.size(1)
-            cross_entropy_loss += F.cross_entropy(output[:, start_idx:end_idx], cat_target.argmax(dim=1))
+            cross_entropy_loss += F.cross_entropy(output[:, start_idx:end_idx], cat_target)
             start_idx = end_idx
         
 
@@ -177,6 +177,9 @@ def main(train_config_path):
     #Create datasets
     train_dataset = BaseballDataset(train_data,config_path,sequence_length)
     valid_dataset = BaseballDataset(valid_data,config_path,sequence_length)
+
+    print(f"Train Label Cols: {train_dataset.continuous_label_indices}, {train_dataset.categorical_label_indices}")
+    print(f"Valid Label Cols: {valid_dataset.continuous_label_indices}, {valid_dataset.categorical_label_indices}")
     
     print("Creating Dataloaders", flush=True)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=8)
