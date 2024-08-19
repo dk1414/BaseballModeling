@@ -1,0 +1,17 @@
+{
+    "num_heads": 6,
+    "num_encoder_layers": 8,
+    "hidden_dim": 42,
+    "sequence_length": 200,
+    "dropout": 0.1,
+    "batch_size": 256,
+    "weight_param": 0.5,
+    "num_epochs": 10,
+    "learning_rate": 0.01,
+    "model_save_dir": "med_200_output_updated",
+    "config_path": "../data/config.json",
+    "train_data_path": "../data/statcast_2015-2023_cleaned.csv",
+    "valid_data_path": "../data/statcast_2023-2024_cleaned.csv",
+    "input_dim": 75,
+    "output_dim": 24
+}

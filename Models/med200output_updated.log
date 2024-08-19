@@ -1,0 +1,36 @@
+nohup: ignoring input
+Device: cuda
+Loading Data
+Train Shape: (5432259, 80)
+Valid Shape: (1110231, 80)
+Creating Datasets
+Train Label Cols: tensor([ 0,  8,  9, 17]), [tensor([21, 22, 23, 24, 25, 26, 27, 28, 29, 30]), tensor([52, 53, 54, 55, 56, 57, 58, 59, 60, 61])]
+Valid Label Cols: tensor([ 0,  8,  9, 17]), [tensor([21, 22, 23, 24, 25, 26, 27, 28, 29, 30]), tensor([52, 53, 54, 55, 56, 57, 58, 59, 60, 61])]
+Creating Dataloaders
+# Params: 94062
+Starting epoch: 0
+/home/dck5549/miniconda3/envs/BaseballEnv/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/home/dck5549/miniconda3/envs/BaseballEnv/lib/python3.12/site-packages/torch/nn/modules/linear.py:117: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /opt/conda/conda-bld/pytorch_1720538455419/work/aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return F.linear(input, self.weight, self.bias)
+Epoch 1/10, Train Loss: 1.729023011893472, Val Loss: 1.7266466961716116
+Starting epoch: 1
+Epoch 2/10, Train Loss: 1.7282023319051956, Val Loss: 1.7263843930547307
+Starting epoch: 2
+Epoch 3/10, Train Loss: 1.7282075301371151, Val Loss: 1.7264361458874324
+Starting epoch: 3
+Epoch 4/10, Train Loss: 1.7281966789998477, Val Loss: 1.7264853548371075
+Starting epoch: 4
+Epoch 5/10, Train Loss: 1.728196994937657, Val Loss: 1.7261747992317413
+Starting epoch: 5
+Epoch 6/10, Train Loss: 1.72820088017491, Val Loss: 1.7260411741979673
+Starting epoch: 6
+Epoch 7/10, Train Loss: 1.728187009842452, Val Loss: 1.7263306266590777
+Starting epoch: 7
+Epoch 8/10, Train Loss: 1.728201548567456, Val Loss: 1.7267012683807286
+Starting epoch: 8
+Epoch 9/10, Train Loss: 1.7282011393817043, Val Loss: 1.7267069387598741
+Starting epoch: 9
+Epoch 10/10, Train Loss: 1.7282147299284705, Val Loss: 1.7267879196311784
+Model saved to med_200_output_updated/transformer_model.pth
+Loss Plot saved to med_200_output_updated/loss_plot.png

@@ -11,5 +11,7 @@
     "model_save_dir": "large_200_output_updated",
     "config_path": "../data/config.json",
     "train_data_path": "../data/statcast_2015-2023_cleaned.csv",
-    "valid_data_path": "../data/statcast_2023-2024_cleaned.csv"
+    "valid_data_path": "../data/statcast_2023-2024_cleaned.csv",
+    "input_dim": 75,
+    "output_dim": 24
 }
