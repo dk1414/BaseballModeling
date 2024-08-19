@@ -1,0 +1,18 @@
+{
+    "num_heads": 12,
+    "num_encoder_layers": 12,
+    "hidden_dim": 72,
+    "sequence_length": 200,
+    "dropout": 0.05,
+    "batch_size": 2,
+    "weight_param": 0.5,
+    "num_epochs": 100,
+    "learning_rate": 0.01,
+    "num_workers": 0,
+    "model_save_dir": "tiny_data_experiment",
+    "config_path": "../data/config.json",
+    "train_data_path": "../data/mini_train.csv",
+    "valid_data_path": "../data/mini_test.csv",
+    "input_dim": 75,
+    "output_dim": 24
+}

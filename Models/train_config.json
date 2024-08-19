@@ -4,12 +4,13 @@
     "hidden_dim": 72,
     "sequence_length": 200,
     "dropout": 0.05,
-    "batch_size": 256,
+    "batch_size": 2,
     "weight_param": 0.5,
-    "num_epochs": 10,
+    "num_epochs": 100,
     "learning_rate": 0.01,
-    "model_save_dir": "large_200_output_updated",
+    "num_workers": 0,
+    "model_save_dir": "tiny_data_experiment",
     "config_path": "../data/config.json",
-    "train_data_path": "../data/statcast_2015-2023_cleaned.csv",
-    "valid_data_path": "../data/statcast_2023-2024_cleaned.csv"
+    "train_data_path": "../data/mini_train.csv",
+    "valid_data_path": "../data/mini_test.csv"
 }

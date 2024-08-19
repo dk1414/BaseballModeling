@@ -150,6 +150,7 @@ def main(train_config_path):
     loss_weight_param = train_config["weight_param"]
     learning_rate = train_config["learning_rate"]
     num_epochs = train_config["num_epochs"]
+    num_workers = train_config["num_workers"]
     model_save_dir = train_config["model_save_dir"]
     model_save_path = os.path.join(model_save_dir, 'transformer_model.pth')
     loss_plot_path = os.path.join(model_save_dir, 'loss_plot.png')
@@ -183,8 +184,8 @@ def main(train_config_path):
     print(f"Valid Label Cols: {valid_dataset.continuous_label_indices}, {valid_dataset.categorical_label_indices}")
     
     print("Creating Dataloaders", flush=True)
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=8)
-    val_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=False, num_workers=8)
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
+    val_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers)
 
 
     # Hyperparameters
