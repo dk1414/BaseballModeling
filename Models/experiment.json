@@ -1,16 +1,16 @@
 {
-    "num_heads": [8],
-    "num_encoder_layers": [8],
-    "hidden_dim": [72],
+    "num_heads": [6,12],
+    "num_encoder_layers": [6,12],
+    "hidden_dim": [72,96],
     "sequence_length": 200,
-    "dropout": [0,0.1],
+    "dropout": [0],
     "batch_size": 100,
-    "weight_param": [0.3,0.5,0.7],
-    "num_epochs": [10,50],
-    "learning_rate": [0.001, 0.005, 0.01, 0.1],
-    "num_workers": 8,
-    "model_save_dir": "tiny_data_grid_experiment",
-    "config_path": "../data/config.json",
-    "train_data_path": "../data/mini_train.csv",
-    "valid_data_path": "../data/mini_test.csv"
+    "weight_param": [0.5],
+    "num_epochs": [50],
+    "learning_rate": [0.00001,0.0001],
+    "num_workers": 0,
+    "model_save_dir": "med_data_zone_experiment",
+    "config_path": "../data/configv2.json",
+    "train_data_path": "../data/med_train.csv",
+    "valid_data_path": "../data/med_test.csv"
 }

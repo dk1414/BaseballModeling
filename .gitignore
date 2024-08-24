@@ -1,2 +1,8 @@
 *.csv
 __pycache__/
+tiny_data_grid_experiment/
+tiny_data_grid_large_experiment/
+tiny_data_grid_residual_exp/
+tiny_data_grid_residual_exp2/
+tiny_data_grid_residual_exp3/
+tiny_data_grid_residual_xavier/

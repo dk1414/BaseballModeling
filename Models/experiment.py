@@ -51,18 +51,52 @@ class TransformerModel(nn.Module):
         self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_encoder_layers)
         
         self.fc_layers = nn.Sequential(
-            nn.Linear(hidden_dim, hidden_dim),
+            nn.Linear(2 * hidden_dim, hidden_dim),
             nn.ReLU(),
             nn.Linear(hidden_dim, output_dim)
         )
 
+        # Linear layer for the residual connection
+        self.residual_fc = nn.Linear(input_dim, hidden_dim)
+
+        self._init_weights()
+
     def forward(self, x):
-        x = self.embedding(x)
-        x = self.positional_encoding(x)
-        x = self.transformer_encoder(x)
-        x = x[:, -1, :]  # Use the output of the last pitch in the sequence
-        x = self.fc_layers(x)
-        return x
+
+        x_emb = self.embedding(x)
+        x_emb = self.positional_encoding(x_emb)
+        x_transformed = self.transformer_encoder(x_emb)
+        
+        # Use the output of the last pitch in the sequence
+        x_last = x_transformed[:, -1, :]
+        
+        # Extract the last element of the original input
+        x_last_input = x[:, -1, :]
+        
+        # Pass the last element through the residual fc layer
+        x_last_input_fc = self.residual_fc(x_last_input)
+        
+        # Concatenate the features
+        x_combined = torch.cat((x_last, x_last_input_fc), dim=-1)
+        
+        # Pass combined output through fc_layers
+        x_out = self.fc_layers(x_combined)
+        
+        return x_out
+    
+
+    def _init_weights(self):
+        # Apply Xavier initialization
+        for m in self.modules():
+            if isinstance(m, nn.Linear):
+                nn.init.xavier_uniform_(m.weight)
+                if m.bias is not None:
+                    nn.init.constant_(m.bias, 0)
+            elif isinstance(m, nn.TransformerEncoderLayer):
+                nn.init.xavier_uniform_(m.linear1.weight)
+                nn.init.xavier_uniform_(m.linear2.weight)
+                nn.init.constant_(m.linear1.bias, 0)
+                nn.init.constant_(m.linear2.bias, 0)
 
 class CustomLoss(nn.Module):
     def __init__(self, weight_param):
@@ -205,6 +239,8 @@ def main(train_config_path):
                         for lr in learning_rate:
                             for epochs in num_epochs:
 
+                                print(f"Starting Experiment: nheads-{num_head}, nencoder-{num_encoder_layer}, hdim-{h_dim}, dropout-{drop}, loss weight-{loss_param}, lr-{lr}, epochs-{epochs}", flush=True)
+
                                 # Initialize the model, loss function, and optimizer
                                 model = nn.DataParallel(TransformerModel(input_dim, num_head, num_encoder_layer, h_dim, output_dim, sequence_length, drop))
 
@@ -225,7 +261,7 @@ def main(train_config_path):
                                     val_loss = evaluate(model, val_loader, criterion, device)
                                     train_losses.append(train_loss)
                                     val_losses.append(val_loss)
-                                    print(f"Epoch {epoch + 1}/{num_epochs}, Train Loss: {train_loss}, Val Loss: {val_loss}", flush=True)
+                                    print(f"Epoch {epoch + 1}/{epochs}, Train Loss: {train_loss}, Val Loss: {val_loss}", flush=True)
                                 
                                 curr_dir = model_save_dir + f"/h{num_head}_e{num_encoder_layer}_h{h_dim}_d{drop}_lp{loss_param}_lr{lr}_ep{epochs}"
                                 # Create directory to save model and plot

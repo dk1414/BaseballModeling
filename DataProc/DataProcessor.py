@@ -4,6 +4,7 @@ import json
 from sklearn.preprocessing import StandardScaler
 import warnings
 import pickle
+import random
 
 # Suppress pandas warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -12,6 +13,7 @@ warnings.filterwarnings("ignore", category=pd.errors.SettingWithCopyWarning)
 class DataProcessor:
     def __init__(self, raw_data, config_path, one_hot=True, seed=42):
         np.random.seed(seed)
+        random.seed(seed)
 
         self.raw_data = raw_data
         self.config = self.load_config(config_path)
