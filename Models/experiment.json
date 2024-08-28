@@ -8,7 +8,7 @@
     "weight_param": [0.5],
     "num_epochs": [50],
     "learning_rate": [0.00001,0.0001],
-    "num_workers": 0,
+    "num_workers": 8,
     "model_save_dir": "med_data_zone_experiment",
     "config_path": "../data/configv2.json",
     "train_data_path": "../data/med_train.csv",

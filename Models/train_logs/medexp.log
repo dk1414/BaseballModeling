@@ -1,0 +1,1693 @@
+nohup: ignoring input
+Device: cuda
+Loading Data
+Train Shape: (492992, 93)
+Valid Shape: (231542, 93)
+Creating Datasets
+Train Label Cols: tensor([ 0,  8,  9, 17]), [tensor([21, 22, 23, 24, 25, 26, 27, 28, 29, 30]), tensor([65, 66, 67, 68, 69, 70, 71, 72, 73, 74])]
+Valid Label Cols: tensor([ 0,  8,  9, 17]), [tensor([21, 22, 23, 24, 25, 26, 27, 28, 29, 30]), tensor([65, 66, 67, 68, 69, 70, 71, 72, 73, 74])]
+Creating Dataloaders
+Starting Experiment: nheads-6, nencoder-6, hdim-72, dropout-0, loss weight-0.5, lr-1e-05, epochs-50
+# Params: 215952
+Starting epoch: 0
+/home/dck5549/miniconda3/envs/BaseballEnv/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/home/dck5549/miniconda3/envs/BaseballEnv/lib/python3.12/site-packages/torch/nn/modules/linear.py:117: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /opt/conda/conda-bld/pytorch_1720538455419/work/aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return F.linear(input, self.weight, self.bias)
+Epoch 1/50, Train Loss: 1.7451511587003554, Val Loss: 1.5300081335527445
+Starting epoch: 1
+Epoch 2/50, Train Loss: 1.4739258994596112, Val Loss: 1.4395590104867848
+Starting epoch: 2
+Epoch 3/50, Train Loss: 1.4117483837778761, Val Loss: 1.3972616580069634
+Starting epoch: 3
+Epoch 4/50, Train Loss: 1.2535022445469624, Val Loss: 1.0463564635547573
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.9865104284149239, Val Loss: 0.9540119968567888
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.9243054438762359, Val Loss: 0.9122765089165876
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8953938770698449, Val Loss: 0.8943228704345113
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8803498810930833, Val Loss: 0.8839887822933785
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8713056697861755, Val Loss: 0.8778042170551885
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.8647589810137744, Val Loss: 0.8723342382593008
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.8597727519323899, Val Loss: 0.8676932037357714
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.8556846448628684, Val Loss: 0.864729671445911
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.8520324209119369, Val Loss: 0.8623268558798864
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.8486995936364531, Val Loss: 0.8595904675329422
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.8459616239436292, Val Loss: 0.8573827433043862
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.8434391236706361, Val Loss: 0.8554961713945175
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.8408280977456352, Val Loss: 0.8546708447698802
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.8388886384814821, Val Loss: 0.8529967544757524
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.8368365403918939, Val Loss: 0.8501315451201846
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.8350589770655276, Val Loss: 0.8485826669549207
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.8332775542338708, Val Loss: 0.8485134320056185
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.8318552127348888, Val Loss: 0.8466444975386974
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.8304714031917063, Val Loss: 0.8493446181429193
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.8290343974118604, Val Loss: 0.8465502323119498
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.8280721659508664, Val Loss: 0.8431610211631609
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.8265242950773389, Val Loss: 0.8432814162265528
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.8255588194878319, Val Loss: 0.8424707685466732
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.8245304038534655, Val Loss: 0.8429603633728433
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.8236039854766317, Val Loss: 0.8414362533426599
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.8226013182496924, Val Loss: 0.8411497335528417
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.8216996188858204, Val Loss: 0.8396114736948482
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.8207466031466811, Val Loss: 0.8390255955021257
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.8198050248870463, Val Loss: 0.838542539344845
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.8189786640157459, Val Loss: 0.8387165568107554
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.8181398336341767, Val Loss: 0.8400768887139556
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.8173644122688176, Val Loss: 0.8395319196203572
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.8165632199210072, Val Loss: 0.8383896064644601
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.8159653481358484, Val Loss: 0.8385629495626326
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.8149708713415607, Val Loss: 0.8367537073107738
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.8148134032775551, Val Loss: 0.8360313316608997
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.8137019206108731, Val Loss: 0.8359920134329218
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.8131303008406822, Val Loss: 0.8350737850104547
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.8125159761366032, Val Loss: 0.8348829238754113
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.8117191741002094, Val Loss: 0.8352393814070821
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.8112687478086801, Val Loss: 0.8364998581692827
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.8107733525077251, Val Loss: 0.8349599611295643
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.8099941214043197, Val Loss: 0.83628522761587
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.8092220899199462, Val Loss: 0.8357569369557843
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.8085996250844277, Val Loss: 0.8344481734781692
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.8081679476031369, Val Loss: 0.8347048468871408
+Model saved to med_data_zone_experiment/h6_e6_h72_d0_lp0.5_lr1e-05_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h6_e6_h72_d0_lp0.5_lr1e-05_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h6_e6_h72_d0_lp0.5_lr1e-05_ep50/model_config.json
+Starting Experiment: nheads-6, nencoder-6, hdim-72, dropout-0, loss weight-0.5, lr-0.0001, epochs-50
+# Params: 215952
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.1716384719254216, Val Loss: 0.8897423304710332
+Starting epoch: 1
+Epoch 2/50, Train Loss: 0.862191382407766, Val Loss: 0.8718071546479349
+Starting epoch: 2
+Epoch 3/50, Train Loss: 0.8430202210167291, Val Loss: 0.8574597743269458
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.8318818840976769, Val Loss: 0.8437772370486774
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.8229608526859788, Val Loss: 0.8433616654844907
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8167969032918366, Val Loss: 0.8386192559889809
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8119433118827586, Val Loss: 0.8362554985857674
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8068812240686828, Val Loss: 0.835199931703415
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.803294833236375, Val Loss: 0.830470987806754
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.7994675358324522, Val Loss: 0.8314218877302927
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.7956585905247306, Val Loss: 0.8321300746978247
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.7919001295529972, Val Loss: 0.8273585570138426
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.7886800188277422, Val Loss: 0.8290295532671564
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.7856641747174955, Val Loss: 0.8280760885072121
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.7816769790245155, Val Loss: 0.8320818149422514
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.7779406452498602, Val Loss: 0.8304684766495132
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.7744954015695334, Val Loss: 0.8294752129761507
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.7704567220120776, Val Loss: 0.8329205424008961
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.7666143793162237, Val Loss: 0.83543295020228
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.7620235638130852, Val Loss: 0.8335536598547014
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.7575459742583687, Val Loss: 0.8403592056110337
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.752694763219695, Val Loss: 0.8430129154937196
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.7479605515077161, Val Loss: 0.845508399555461
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.7423494335275719, Val Loss: 0.847423855972395
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.737427350960194, Val Loss: 0.8498623793560708
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.7312038263264891, Val Loss: 0.8581721726927963
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.7259904832337306, Val Loss: 0.8649907747744114
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.7194374185075081, Val Loss: 0.8703098841782274
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.7131776857090923, Val Loss: 0.8704203669192243
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.707047618768882, Val Loss: 0.877906384838913
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.7000897578918596, Val Loss: 0.8819792094645217
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.6937665909325036, Val Loss: 0.8858550861313863
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.6874777234377796, Val Loss: 0.8991152608079763
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.6809683943286805, Val Loss: 0.9166749310860806
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.673739256527271, Val Loss: 0.9056050004717714
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.6668348377120028, Val Loss: 0.9102534120649602
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.6602637288439726, Val Loss: 0.9306039928690266
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.6529099839562247, Val Loss: 0.9249725647910237
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.6461302775470491, Val Loss: 0.9443418684682685
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.6401637445598621, Val Loss: 0.9497567678713571
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.6336942957802337, Val Loss: 0.9519589182784779
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.6271982450864731, Val Loss: 0.9555513457568009
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.6205609127424744, Val Loss: 0.9744102516247783
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.6142123521867009, Val Loss: 0.9747705911111937
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.6087388339306529, Val Loss: 0.9851838466400445
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.6023457330640809, Val Loss: 0.9866004989414817
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.597545229211904, Val Loss: 0.9974440031425968
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.591417322575764, Val Loss: 1.004117816664765
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.5860621738435479, Val Loss: 1.0096522371338643
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.5802732318890458, Val Loss: 1.0089128922865134
+Model saved to med_data_zone_experiment/h6_e6_h72_d0_lp0.5_lr0.0001_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h6_e6_h72_d0_lp0.5_lr0.0001_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h6_e6_h72_d0_lp0.5_lr0.0001_ep50/model_config.json
+Starting Experiment: nheads-6, nencoder-6, hdim-96, dropout-0, loss weight-0.5, lr-1e-05, epochs-50
+# Params: 375480
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.6761335176498984, Val Loss: 1.4869514935522157
+Starting epoch: 1
+Epoch 2/50, Train Loss: 1.4351093126646979, Val Loss: 1.3998292553363612
+Starting epoch: 2
+Epoch 3/50, Train Loss: 1.2035866209729864, Val Loss: 1.037823600556513
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.965475545500794, Val Loss: 0.9272250295428782
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.9028609401294736, Val Loss: 0.8954794137729762
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8796232459531974, Val Loss: 0.880306056511376
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8669700284422885, Val Loss: 0.8740275841772075
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8583016939281038, Val Loss: 0.8651119566584718
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8517879541536361, Val Loss: 0.8597635792531428
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.8467813429239546, Val Loss: 0.859668347801431
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.8422394961071691, Val Loss: 0.8533766168885081
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.8386850377268595, Val Loss: 0.8502191441162317
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.8350744318416818, Val Loss: 0.8485411682595948
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.8327375519100173, Val Loss: 0.8462223290347564
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.8303728015264878, Val Loss: 0.8433937791158238
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.8279437917812514, Val Loss: 0.8421343792604333
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.8258156879843221, Val Loss: 0.8414544152233938
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.8238731099275008, Val Loss: 0.8396992802357551
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.8220727127025806, Val Loss: 0.8402848571910634
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.8203962924258567, Val Loss: 0.8380075396637836
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.818893019019868, Val Loss: 0.8377492247875001
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.8175944665174629, Val Loss: 0.8361901374354751
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.8162838696775376, Val Loss: 0.8356237105385661
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.8145422838181727, Val Loss: 0.8383018708981229
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.8134096314588054, Val Loss: 0.8376903278986846
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.8123200503104493, Val Loss: 0.8347822688383297
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.8108957397166863, Val Loss: 0.8342161089815991
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.8101080966453321, Val Loss: 0.8329661598952482
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.8088663158121545, Val Loss: 0.833674023126034
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.8077889749414036, Val Loss: 0.8352383841116116
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.8068788578316617, Val Loss: 0.8317629628468329
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.8058673793569474, Val Loss: 0.8344511427340574
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.8052031895308339, Val Loss: 0.83213105056536
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.8039183001867354, Val Loss: 0.8328037152418037
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.8031193012867189, Val Loss: 0.8340079281711439
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.8024981402401292, Val Loss: 0.831316133784793
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.8016358431268065, Val Loss: 0.8319638083502376
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.800550144694581, Val Loss: 0.8319198732767924
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.7994260066252526, Val Loss: 0.8305706827411385
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.7988360498167112, Val Loss: 0.8313181241776081
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.798068546338475, Val Loss: 0.8322051706903574
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.7971643231707292, Val Loss: 0.8322461435266566
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.79670678998895, Val Loss: 0.8304201444106686
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.7957777155153885, Val Loss: 0.8295595612013419
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.7947116469118263, Val Loss: 0.8324276429935142
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.7941240842143694, Val Loss: 0.8313850237224703
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.7935631504726961, Val Loss: 0.8311049041945708
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.793127104773193, Val Loss: 0.8314491739976257
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.7918777583097426, Val Loss: 0.8299333611482744
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.791781901322172, Val Loss: 0.8314490949110519
+Model saved to med_data_zone_experiment/h6_e6_h96_d0_lp0.5_lr1e-05_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h6_e6_h96_d0_lp0.5_lr1e-05_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h6_e6_h96_d0_lp0.5_lr1e-05_ep50/model_config.json
+Starting Experiment: nheads-6, nencoder-6, hdim-96, dropout-0, loss weight-0.5, lr-0.0001, epochs-50
+# Params: 375480
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.0913049289574759, Val Loss: 0.8737190777732446
+Starting epoch: 1
+Epoch 2/50, Train Loss: 0.8484526646845474, Val Loss: 0.8483291403913183
+Starting epoch: 2
+Epoch 3/50, Train Loss: 0.8315981302555302, Val Loss: 0.8402722017430945
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.8212841637158369, Val Loss: 0.8401760758062714
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.8130711278673477, Val Loss: 0.8351287575478249
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8067276693810048, Val Loss: 0.8329768448696361
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8007150744680476, Val Loss: 0.8300734221366776
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.7945519312667797, Val Loss: 0.8287505301935919
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.7890864743074534, Val Loss: 0.8273710280285106
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.7835265768243374, Val Loss: 0.8363169206037122
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.77699303267412, Val Loss: 0.8276971435599352
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.7709026048753164, Val Loss: 0.8322571143671946
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.7644786139172585, Val Loss: 0.8348969530945566
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.7557928113640922, Val Loss: 0.8381027633314699
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.7474098560232846, Val Loss: 0.8412476277972353
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.7378704465071736, Val Loss: 0.8581226700513745
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.7267292774156066, Val Loss: 0.8607263810172819
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.7161421259604669, Val Loss: 0.8627075191945253
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.7038702623669908, Val Loss: 0.8862737321014013
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.6919075278516322, Val Loss: 0.8897814917065865
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.6791820369120276, Val Loss: 0.9006029653225589
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.6665533347335398, Val Loss: 0.9144731486053564
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.6534432480395718, Val Loss: 0.9210345389339212
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.6402073502658105, Val Loss: 0.9375794308638625
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.6281818972448069, Val Loss: 0.9551354574090142
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.6155598395554002, Val Loss: 0.9663960036554498
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.6041857035111804, Val Loss: 0.9726767962195816
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.5926569139058031, Val Loss: 0.9939530590003847
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.5816834036821008, Val Loss: 1.0267075625352797
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.5719047726477672, Val Loss: 1.028360017611538
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.5612640865656354, Val Loss: 1.0308342737392389
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.5509794989618405, Val Loss: 1.043774098638918
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.5418547286478691, Val Loss: 1.0624544412794135
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.5326077798195379, Val Loss: 1.0771894532359005
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.5249532525213171, Val Loss: 1.0880781062718095
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.5173578304596065, Val Loss: 1.0700336992084674
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.509456502702616, Val Loss: 1.1016405348338716
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.5019007555819209, Val Loss: 1.12882993169681
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.4954959118521364, Val Loss: 1.1308058674993187
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.4876574036732833, Val Loss: 1.1299248852672072
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.48138136502852824, Val Loss: 1.147917155649237
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.4750211472847312, Val Loss: 1.1648196250921825
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.46935445382078617, Val Loss: 1.1676059249605402
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.4640811641086539, Val Loss: 1.1844517688320912
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.4583769202600581, Val Loss: 1.1938971476964189
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.45368574830369496, Val Loss: 1.1994347589818852
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.44833183238433616, Val Loss: 1.2253996889904328
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.4437712834742543, Val Loss: 1.222547815529109
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.43979202515272314, Val Loss: 1.2385499106114697
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.4348557488121226, Val Loss: 1.2712170917237409
+Model saved to med_data_zone_experiment/h6_e6_h96_d0_lp0.5_lr0.0001_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h6_e6_h96_d0_lp0.5_lr0.0001_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h6_e6_h96_d0_lp0.5_lr0.0001_ep50/model_config.json
+Starting Experiment: nheads-6, nencoder-12, hdim-72, dropout-0, loss weight-0.5, lr-1e-05, epochs-50
+# Params: 406896
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.697567470269875, Val Loss: 1.520263714206105
+Starting epoch: 1
+Epoch 2/50, Train Loss: 1.466861258436202, Val Loss: 1.4352203633797493
+Starting epoch: 2
+Epoch 3/50, Train Loss: 1.4054898520937478, Val Loss: 1.3852487394062807
+Starting epoch: 3
+Epoch 4/50, Train Loss: 1.2595306268719844, Val Loss: 1.124141890164779
+Starting epoch: 4
+Epoch 5/50, Train Loss: 1.045536642288936, Val Loss: 1.004937212517921
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.9644311121679631, Val Loss: 0.9474196323820185
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.9171167882521697, Val Loss: 0.9107237760625337
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8917391390454505, Val Loss: 0.8930364498651299
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8771149176951463, Val Loss: 0.878960583569456
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.8672380619119269, Val Loss: 0.8756463497724064
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.8596562629822175, Val Loss: 0.8698699907485125
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.8536533442033076, Val Loss: 0.8635335957969014
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.8487345057213532, Val Loss: 0.8574053685584666
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.8444954104541353, Val Loss: 0.8544017929018025
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.8412961927874231, Val Loss: 0.8557130596214415
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.8380645563910185, Val Loss: 0.8504015151096982
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.8354074882047661, Val Loss: 0.8505147819517294
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.8331728034998466, Val Loss: 0.8456608345861918
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.8308770725215647, Val Loss: 0.8502991394094046
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.828938175329682, Val Loss: 0.8469887953292597
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.8278085514903069, Val Loss: 0.8442075472278623
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.825806849441255, Val Loss: 0.8447972979076802
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.82473026313961, Val Loss: 0.8429353506750511
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.8227371641608067, Val Loss: 0.8402241017786966
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.821436401621608, Val Loss: 0.8399678253768913
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.8203746306501353, Val Loss: 0.8382529109300976
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.8189789320486202, Val Loss: 0.8387912632303035
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.8181927155715057, Val Loss: 0.8402786193878793
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.8167364497205828, Val Loss: 0.837053343708342
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.8158082930228187, Val Loss: 0.8370855364918447
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.8147606395897931, Val Loss: 0.8384938018775039
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.8139453165930403, Val Loss: 0.8351018166856913
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.8128089153694555, Val Loss: 0.8370298629986042
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.8119545995123629, Val Loss: 0.8349891685643619
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.8113188078366494, Val Loss: 0.8352125628372369
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.8103024206358301, Val Loss: 0.8373760753751938
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.8094541317970344, Val Loss: 0.8381669740858799
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.8085429286339431, Val Loss: 0.8346482768753217
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.807823886097919, Val Loss: 0.8351519056435289
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.8071229380293975, Val Loss: 0.8351691234050563
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.8063404812202344, Val Loss: 0.8352910124109846
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.805224355692132, Val Loss: 0.8350349138829084
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.8046057964552715, Val Loss: 0.8350064596400397
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.8041346104723547, Val Loss: 0.8343309254350684
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.80327367092376, Val Loss: 0.8344209841175807
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.8024817857378164, Val Loss: 0.8329644586483695
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.8018528930411981, Val Loss: 0.832499547010822
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.8011206734678723, Val Loss: 0.83215921227318
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.8001663347884432, Val Loss: 0.8341706886242526
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.7996189597167552, Val Loss: 0.832654505071619
+Model saved to med_data_zone_experiment/h6_e12_h72_d0_lp0.5_lr1e-05_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h6_e12_h72_d0_lp0.5_lr1e-05_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h6_e12_h72_d0_lp0.5_lr1e-05_ep50/model_config.json
+Starting Experiment: nheads-6, nencoder-12, hdim-72, dropout-0, loss weight-0.5, lr-0.0001, epochs-50
+# Params: 406896
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.1841000828081125, Val Loss: 0.8820693297632809
+Starting epoch: 1
+Epoch 2/50, Train Loss: 0.8618657993374061, Val Loss: 0.85987248854959
+Starting epoch: 2
+Epoch 3/50, Train Loss: 0.8437297032317529, Val Loss: 0.8530659955473219
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.8318617371636611, Val Loss: 0.8402199416543662
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.8242267567652634, Val Loss: 0.8421206750899488
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8173072044311638, Val Loss: 0.8323140223063009
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8118578469151578, Val Loss: 0.833186690412019
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8067280297117655, Val Loss: 0.8311593783793866
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8015741268025964, Val Loss: 0.828049015600893
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.7970597156402817, Val Loss: 0.8309410669877086
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.7933310500016097, Val Loss: 0.8282373524376861
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.7884879554107738, Val Loss: 0.8249704173533076
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.7838617491875662, Val Loss: 0.8281273471898046
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.7791570481872646, Val Loss: 0.8247903083845349
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.7747009826352043, Val Loss: 0.8295005346516521
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.7691224415156869, Val Loss: 0.8367815542247308
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.7632854020401255, Val Loss: 0.8303459923624206
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.7570529765793201, Val Loss: 0.8334947188090334
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.750586069125357, Val Loss: 0.8423839645270293
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.7433744462130574, Val Loss: 0.8502383672701289
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.73449189541029, Val Loss: 0.8500697351691483
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.7262806068522195, Val Loss: 0.8572698288644314
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.7172000710739823, Val Loss: 0.86576346940445
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.7073642963898044, Val Loss: 0.8720385190195138
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.6966877755024455, Val Loss: 0.8818763102447821
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.6872205396469773, Val Loss: 0.8993648089036641
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.6762635074751736, Val Loss: 0.9034267465200655
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.6656790621398501, Val Loss: 0.9097392583759235
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.6553138284253586, Val Loss: 0.9075194990162629
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.6444202556297356, Val Loss: 0.930987051433268
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.6344428599805235, Val Loss: 0.9375818048604516
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.624619271958758, Val Loss: 0.944371165550551
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.6152762516737611, Val Loss: 0.9563074381536888
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.6054327212524777, Val Loss: 0.9724084231578858
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.5962665351470061, Val Loss: 0.9897076247460861
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.5866534952133048, Val Loss: 0.9765619090262879
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.5788399946927774, Val Loss: 1.0092210831313297
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.5702780927193559, Val Loss: 1.00857333072563
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.5619988733536312, Val Loss: 1.0327781396190296
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.5538093519684018, Val Loss: 1.0373218944426066
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.5467609855200465, Val Loss: 1.0441739843640359
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.5385614192557886, Val Loss: 1.051164317354068
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.532678848471332, Val Loss: 1.0649341599126116
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.5262068650684272, Val Loss: 1.0556542452695348
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.5193292661388841, Val Loss: 1.0847069466936177
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.513178485045141, Val Loss: 1.0809165843033388
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.5060747281798053, Val Loss: 1.091982747536762
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.5001199071370966, Val Loss: 1.0981852245610686
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.49446794262193106, Val Loss: 1.102919581722706
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.4909723205207901, Val Loss: 1.1048335427539977
+Model saved to med_data_zone_experiment/h6_e12_h72_d0_lp0.5_lr0.0001_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h6_e12_h72_d0_lp0.5_lr0.0001_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h6_e12_h72_d0_lp0.5_lr0.0001_ep50/model_config.json
+Starting Experiment: nheads-6, nencoder-12, hdim-96, dropout-0, loss weight-0.5, lr-1e-05, epochs-50
+# Params: 713016
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.7019151144285933, Val Loss: 1.4993833155642515
+Starting epoch: 1
+Epoch 2/50, Train Loss: 1.3231199588528693, Val Loss: 1.048153725076229
+Starting epoch: 2
+Epoch 3/50, Train Loss: 0.9722064927565062, Val Loss: 0.9294892342013641
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.9048792855377328, Val Loss: 0.8991308038451614
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.8811349722348177, Val Loss: 0.8857208473098165
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8684545983212729, Val Loss: 0.8827050186567943
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8593458416240073, Val Loss: 0.8703518243983487
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8527550925153037, Val Loss: 0.8620187862340964
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8477546218958939, Val Loss: 0.861151289082763
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.8430228533867656, Val Loss: 0.8586961635096669
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.8391286969482585, Val Loss: 0.8538043298270015
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.8359334507465488, Val Loss: 0.85075704148825
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.832673796193065, Val Loss: 0.8497704897220749
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.8300682510847675, Val Loss: 0.848120580721846
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.8275450669565912, Val Loss: 0.8458980713927912
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.8253622555441285, Val Loss: 0.8429939169614348
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.823147568495241, Val Loss: 0.8437755880378575
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.8210250769911254, Val Loss: 0.8428445511544704
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.8190710493662129, Val Loss: 0.8415647880696936
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.8172062582930807, Val Loss: 0.8392760731329046
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.815650526398928, Val Loss: 0.8372298882493882
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.8141196516849744, Val Loss: 0.8380862085021601
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.8126364716266984, Val Loss: 0.8361221313126719
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.8113378754353736, Val Loss: 0.8358384249670402
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.80975222878636, Val Loss: 0.8356786113360832
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.8088357724899624, Val Loss: 0.8346440032485296
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.8073030299983025, Val Loss: 0.8353730568051425
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.8066063293742582, Val Loss: 0.8363347245941946
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.8052109006467176, Val Loss: 0.8358314692405594
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.8041807981335277, Val Loss: 0.8324817401559932
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.8028375563866896, Val Loss: 0.8333739089511023
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.8015991625161577, Val Loss: 0.8332174249370572
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.8005773409707501, Val Loss: 0.8328577978420327
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.7997237111194025, Val Loss: 0.840216159033408
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.7986466004332032, Val Loss: 0.8323960366576189
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.7975797979347212, Val Loss: 0.8337510500597937
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.7963867163937832, Val Loss: 0.8312854345502525
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.795424105781674, Val Loss: 0.8340758248584199
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.7944202547742114, Val Loss: 0.8299156804340164
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.7935603383133338, Val Loss: 0.836852673870277
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.7923265680137994, Val Loss: 0.8319307692944785
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.791142536121588, Val Loss: 0.8328638514742988
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.7909970917708615, Val Loss: 0.8315090312515211
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.7894945178968297, Val Loss: 0.8324841080959108
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.7885050542738786, Val Loss: 0.8322582318558907
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.7873973927287273, Val Loss: 0.8341905254479812
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.787013380466074, Val Loss: 0.8340665123214288
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.7854871945063947, Val Loss: 0.8330807095709218
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.7845698140021002, Val Loss: 0.8340687953586187
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.7836600050925582, Val Loss: 0.8343933623937325
+Model saved to med_data_zone_experiment/h6_e12_h96_d0_lp0.5_lr1e-05_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h6_e12_h96_d0_lp0.5_lr1e-05_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h6_e12_h96_d0_lp0.5_lr1e-05_ep50/model_config.json
+Starting Experiment: nheads-6, nencoder-12, hdim-96, dropout-0, loss weight-0.5, lr-0.0001, epochs-50
+# Params: 713016
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.1416845612079063, Val Loss: 0.8807341665007661
+Starting epoch: 1
+Epoch 2/50, Train Loss: 0.8508685988566979, Val Loss: 0.8579340858093886
+Starting epoch: 2
+Epoch 3/50, Train Loss: 0.8325530330559433, Val Loss: 0.8420768608875513
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.8228897867502976, Val Loss: 0.8373780290125401
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.8149976133673474, Val Loss: 0.8342266106596784
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8087299770110539, Val Loss: 0.8303186983766577
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8019269131570584, Val Loss: 0.8316233215179849
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.7952310592092801, Val Loss: 0.8288443398361948
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.7880580224283823, Val Loss: 0.8332992374940734
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.7810257846170294, Val Loss: 0.8355523471174569
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.7742879363530943, Val Loss: 0.8328031042395316
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.7655685662157778, Val Loss: 0.8336267761902518
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.7564762661979778, Val Loss: 0.8362902941418674
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.7457468506775319, Val Loss: 0.8451823103279203
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.7341989273935964, Val Loss: 0.8461401707445622
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.7207654381932771, Val Loss: 0.8573159229335588
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.7067155735381143, Val Loss: 0.8663174889582707
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.6911474146873354, Val Loss: 0.8742113237379232
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.6757416589935746, Val Loss: 0.9120125372184171
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.6600025225113431, Val Loss: 0.9075918067970962
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.644154541429473, Val Loss: 0.9380623177185884
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.6276160274939778, Val Loss: 0.9492796610491466
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.6121382152369848, Val Loss: 0.962940524101957
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.597866509536714, Val Loss: 0.9777228070678557
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.5828137226112884, Val Loss: 0.9782971912723032
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.568436669316985, Val Loss: 0.9911568214022229
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.5558854671338128, Val Loss: 1.0171628671582797
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.5428817200442124, Val Loss: 1.0341325459328103
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.5308326025278974, Val Loss: 1.0397105234472173
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.5189555468102359, Val Loss: 1.0579052126897404
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.50793555718734, Val Loss: 1.0709703284550134
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.49719162279060336, Val Loss: 1.0854461557796924
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.4881844177184045, Val Loss: 1.0995342883220598
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.47890592053469927, Val Loss: 1.1144374441724443
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.4708192504699549, Val Loss: 1.1011479758682796
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.46189595155269064, Val Loss: 1.1260843552042261
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.45453047591382023, Val Loss: 1.1220115118182414
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.4464580018805843, Val Loss: 1.1521039513962634
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.4404500588759012, Val Loss: 1.1604937233429837
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.43216620415809526, Val Loss: 1.1790356878314225
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.42654692068241623, Val Loss: 1.1946123725600044
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.42017510046028816, Val Loss: 1.2055974741543556
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.4142672271006491, Val Loss: 1.1982897823992147
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.4093259627667386, Val Loss: 1.2219156045425663
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.4039608335903954, Val Loss: 1.2100175273654572
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.39859558544175544, Val Loss: 1.1959405647029093
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.3933313444029583, Val Loss: 1.2308251319435355
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.3889526083720721, Val Loss: 1.2340797285166019
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.3850496697124999, Val Loss: 1.2500331078219395
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.379924056536423, Val Loss: 1.2431601506992027
+Model saved to med_data_zone_experiment/h6_e12_h96_d0_lp0.5_lr0.0001_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h6_e12_h96_d0_lp0.5_lr0.0001_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h6_e12_h96_d0_lp0.5_lr0.0001_ep50/model_config.json
+Starting Experiment: nheads-12, nencoder-6, hdim-72, dropout-0, loss weight-0.5, lr-1e-05, epochs-50
+# Params: 215952
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.7281685340699087, Val Loss: 1.5089902841074014
+Starting epoch: 1
+Epoch 2/50, Train Loss: 1.456607186158122, Val Loss: 1.4235615193275346
+Starting epoch: 2
+Epoch 3/50, Train Loss: 1.383213565913034, Val Loss: 1.2445389043733817
+Starting epoch: 3
+Epoch 4/50, Train Loss: 1.0791538805552963, Val Loss: 1.004075994538806
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.9645082014686301, Val Loss: 0.9387435762434433
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.9192544588237437, Val Loss: 0.9114173162053458
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8976324192090616, Val Loss: 0.8978251845234908
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8845121558407002, Val Loss: 0.8875898211341698
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8759671627973783, Val Loss: 0.8821750691683958
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.8689069884714644, Val Loss: 0.8771252483894785
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.8635262684773195, Val Loss: 0.8723855823912519
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.8594787468826232, Val Loss: 0.8687911579605418
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.8553367453577344, Val Loss: 0.8658043712661796
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.8521671611286864, Val Loss: 0.862820097347086
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.8491728578221158, Val Loss: 0.8614305106708432
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.8465267254664444, Val Loss: 0.8590300630010058
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.8441550426428, Val Loss: 0.8559454139417703
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.8414754878639485, Val Loss: 0.8553245663861536
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.8394869396327892, Val Loss: 0.8532825005859115
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.8374862132827064, Val Loss: 0.8521842395262252
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.8356703602122271, Val Loss: 0.8498645940643851
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.8339932710794119, Val Loss: 0.8551000391658579
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.8330237406896492, Val Loss: 0.8522741972350585
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.8314056699443315, Val Loss: 0.8487372244445174
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.8298031385874397, Val Loss: 0.8467243832214213
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.8284438504993163, Val Loss: 0.8449381461759219
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.8276136373370478, Val Loss: 0.8456266087945209
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.8261443587895542, Val Loss: 0.8430864451260403
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.8253196074493174, Val Loss: 0.8419850263320954
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.824067890769425, Val Loss: 0.8426720259256076
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.8231297867249239, Val Loss: 0.842179469999284
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.8224564995597088, Val Loss: 0.8415402322023647
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.8212578327137464, Val Loss: 0.8442266918199516
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.8207380456534595, Val Loss: 0.8395974644386672
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.8198881913231124, Val Loss: 0.839710821278027
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.8186980775399789, Val Loss: 0.8401262782683551
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.8178075113031156, Val Loss: 0.8397028132868618
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.8170979711081202, Val Loss: 0.8382350610882066
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.8163519841702077, Val Loss: 0.8392478817320884
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.8158526072351088, Val Loss: 0.8376648692593186
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.8151319095341941, Val Loss: 0.839123159559527
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.8141598913086074, Val Loss: 0.8385637215149376
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.8135154850146372, Val Loss: 0.8361505946733456
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.8130303157648203, Val Loss: 0.8372509192213449
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.8123702887841329, Val Loss: 0.8367169568928742
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.8119535837968818, Val Loss: 0.8362617618838217
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.8110040521834802, Val Loss: 0.8355386516274728
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.8104415047996052, Val Loss: 0.8341268852014185
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.8099596258742513, Val Loss: 0.8343822774822364
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.8093166032220412, Val Loss: 0.8372935640488315
+Model saved to med_data_zone_experiment/h12_e6_h72_d0_lp0.5_lr1e-05_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h12_e6_h72_d0_lp0.5_lr1e-05_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h12_e6_h72_d0_lp0.5_lr1e-05_ep50/model_config.json
+Starting Experiment: nheads-12, nencoder-6, hdim-72, dropout-0, loss weight-0.5, lr-0.0001, epochs-50
+# Params: 215952
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.1541881687272257, Val Loss: 0.8884182787300118
+Starting epoch: 1
+Epoch 2/50, Train Loss: 0.8588959181644061, Val Loss: 0.8561092256537625
+Starting epoch: 2
+Epoch 3/50, Train Loss: 0.8405694459750073, Val Loss: 0.8464970764480613
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.830045564019843, Val Loss: 0.8401299370445928
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.8220348832766465, Val Loss: 0.8370616930596372
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8164541650598733, Val Loss: 0.8371873990586813
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8112267215278873, Val Loss: 0.8323440491628402
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.807028590598693, Val Loss: 0.8311097356036404
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8027710780093973, Val Loss: 0.8271161749445158
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.7984742503358613, Val Loss: 0.8267390518527825
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.7946137170357283, Val Loss: 0.8243798423539341
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.7904469931084902, Val Loss: 0.8297292265005175
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.7871671778029448, Val Loss: 0.8266301432778883
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.7833572725572483, Val Loss: 0.8271767099333964
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.7795240506608153, Val Loss: 0.8330159716018403
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.7758908943203596, Val Loss: 0.8302770865943094
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.7718257938837779, Val Loss: 0.8313288613005937
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.7671106267567689, Val Loss: 0.83225775934805
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.762648823493788, Val Loss: 0.8391062718756656
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.7573102598483004, Val Loss: 0.8397331828701085
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.7521658258044507, Val Loss: 0.8444916459670945
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.746459300190085, Val Loss: 0.8452560782913592
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.7403335903548919, Val Loss: 0.8497824485434912
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.7342727674890142, Val Loss: 0.8555983172036756
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.7276004852274615, Val Loss: 0.8598147530986033
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.72096549388174, Val Loss: 0.8655608600758492
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.7135773761791385, Val Loss: 0.8759299657927309
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.7057721358180422, Val Loss: 0.8809311879923128
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.6985652142103476, Val Loss: 0.8905282391621974
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.6901065368052537, Val Loss: 0.892791262857195
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.6819178806118409, Val Loss: 0.9093125250220561
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.6738544942107988, Val Loss: 0.907404757954142
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.6661432085345282, Val Loss: 0.9232868409865234
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.6583949724049724, Val Loss: 0.9259250296316686
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.6502448302643721, Val Loss: 0.9305862863756503
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.6425786436536397, Val Loss: 0.9460285682496303
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.6345810545676953, Val Loss: 0.9511688735147478
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.6273661164290709, Val Loss: 0.9625859176377908
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.6196686210038315, Val Loss: 0.9758499311727369
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.6126814464109115, Val Loss: 0.9773448149858812
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.6050721088974697, Val Loss: 0.9870620135078514
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.5982897150262673, Val Loss: 1.0029564379158915
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.5913213853392315, Val Loss: 1.0192700888379391
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.5846288617774765, Val Loss: 1.0206153377048774
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.5790422610374467, Val Loss: 1.0229562618499806
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.5726320997985191, Val Loss: 1.0539672603217103
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.5658966365116566, Val Loss: 1.0483781347489933
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.560356127679912, Val Loss: 1.0690931240732147
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.5550807509669244, Val Loss: 1.0659837221845667
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.549743981399308, Val Loss: 1.0598910738900578
+Model saved to med_data_zone_experiment/h12_e6_h72_d0_lp0.5_lr0.0001_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h12_e6_h72_d0_lp0.5_lr0.0001_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h12_e6_h72_d0_lp0.5_lr0.0001_ep50/model_config.json
+Starting Experiment: nheads-12, nencoder-6, hdim-96, dropout-0, loss weight-0.5, lr-1e-05, epochs-50
+# Params: 375480
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.6949331374167143, Val Loss: 1.4939850396035965
+Starting epoch: 1
+Epoch 2/50, Train Loss: 1.4404453725938917, Val Loss: 1.4153928663567943
+Starting epoch: 2
+Epoch 3/50, Train Loss: 1.3586029392186274, Val Loss: 1.1775587873693258
+Starting epoch: 3
+Epoch 4/50, Train Loss: 1.0165903902642985, Val Loss: 0.9541525950085479
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.9184221127682555, Val Loss: 0.9040146105357679
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8876255452476215, Val Loss: 0.8859941366614442
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8727131410982738, Val Loss: 0.8766938368800101
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8631826076092498, Val Loss: 0.8702928077317473
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8567484143874623, Val Loss: 0.8639839328087522
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.8505781154215853, Val Loss: 0.8595414005564314
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.8463420689999117, Val Loss: 0.859931813691
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.8422655482501278, Val Loss: 0.8534354706590699
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.8390162263210514, Val Loss: 0.8497452069011053
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.8359814760060716, Val Loss: 0.8477191817471846
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.8333564565980222, Val Loss: 0.8476306053967662
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.8311482459369393, Val Loss: 0.8482666094558517
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.8290418621258405, Val Loss: 0.8436566137340431
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.8270380895909952, Val Loss: 0.8412386675967246
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.8248209294820935, Val Loss: 0.8410179894021217
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.8233589557646828, Val Loss: 0.8406771728420468
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.8214613288938686, Val Loss: 0.8394240818737363
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.8198984054056291, Val Loss: 0.8370453312129372
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.8185608948568189, Val Loss: 0.8362752684581306
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.8174220921646032, Val Loss: 0.8352365942011838
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.8158762417185257, Val Loss: 0.835876086881208
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.814728743043169, Val Loss: 0.8370857475788736
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.8133853252518817, Val Loss: 0.8330899353903702
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.8125384564067851, Val Loss: 0.8349085453014905
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.8115980297828448, Val Loss: 0.8347785575855154
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.8103311975828356, Val Loss: 0.8324471258408692
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.8093366347543198, Val Loss: 0.8334285352305288
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.8087111402588939, Val Loss: 0.8312696601788261
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.8071351271400817, Val Loss: 0.8329108676224707
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.8063515502896814, Val Loss: 0.8319720983155405
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.8054383166063848, Val Loss: 0.829342013103334
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.8049106956013996, Val Loss: 0.8311101467357518
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.8035904391738268, Val Loss: 0.8284511398237064
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.8028564868136441, Val Loss: 0.8320528383169293
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.8021708759552673, Val Loss: 0.8289809551688563
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.8012887825944571, Val Loss: 0.8307048306033091
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.8004164932497417, Val Loss: 0.8284858187068846
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.8000448818321484, Val Loss: 0.8288904210048306
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.7988446422320811, Val Loss: 0.8293821843599276
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.7981175565200963, Val Loss: 0.8286176837723831
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.7974383582044726, Val Loss: 0.8298838391342499
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.7964419564783092, Val Loss: 0.8269346564986298
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.7958616405318086, Val Loss: 0.8285581679660786
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.7954474844030652, Val Loss: 0.8286354549650051
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.7948431922778973, Val Loss: 0.828182977805309
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.7934750569308594, Val Loss: 0.8287878631670862
+Model saved to med_data_zone_experiment/h12_e6_h96_d0_lp0.5_lr1e-05_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h12_e6_h96_d0_lp0.5_lr1e-05_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h12_e6_h96_d0_lp0.5_lr1e-05_ep50/model_config.json
+Starting Experiment: nheads-12, nencoder-6, hdim-96, dropout-0, loss weight-0.5, lr-0.0001, epochs-50
+# Params: 375480
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.0540331838854229, Val Loss: 0.8695065464198546
+Starting epoch: 1
+Epoch 2/50, Train Loss: 0.8488943806284359, Val Loss: 0.8534030850460139
+Starting epoch: 2
+Epoch 3/50, Train Loss: 0.8330123875482099, Val Loss: 0.8417200014946309
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.8230077457995194, Val Loss: 0.8376661949706969
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.8151681210951475, Val Loss: 0.836860124188491
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8082288594134974, Val Loss: 0.8366733564887953
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.802138303192068, Val Loss: 0.8293058691616016
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.7960372179918986, Val Loss: 0.8309883033844451
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.7913672348521611, Val Loss: 0.8280600075195226
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.7849836336325395, Val Loss: 0.8287761157606773
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.7789470197713212, Val Loss: 0.8316661942906005
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.7722383565989203, Val Loss: 0.8295768883983965
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.7649669771158106, Val Loss: 0.8389022932801278
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.7576141517636779, Val Loss: 0.8403301148272925
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.7490564872727159, Val Loss: 0.8494846972138761
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.7394173630169514, Val Loss: 0.8509835725484836
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.7286568493293413, Val Loss: 0.860221415670672
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.7174351986666082, Val Loss: 0.8633635368578065
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.7045047955761823, Val Loss: 0.8807559644397531
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.6918483053096085, Val Loss: 0.8907709036429665
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.6780454810438472, Val Loss: 0.8997055283602073
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.6639234357984535, Val Loss: 0.9122516238462024
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.649677532727974, Val Loss: 0.9275505959943909
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.636099824205934, Val Loss: 0.9378521139798406
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.6227474376700278, Val Loss: 0.9700349837169872
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.6096802547448692, Val Loss: 0.9682096281168834
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.5965978549176398, Val Loss: 0.9803246159327879
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.5843564918192278, Val Loss: 1.0081341393887777
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.5719529965189291, Val Loss: 1.0127921315212067
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.560284803777181, Val Loss: 1.049961297851403
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.5498652154644393, Val Loss: 1.0382594257833673
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.539324701768586, Val Loss: 1.0696421581554834
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.5294217448231111, Val Loss: 1.069049620466554
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.5200521257185974, Val Loss: 1.0843631441507458
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.5113272598222854, Val Loss: 1.09669315139336
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.502358604904135, Val Loss: 1.1092256024884373
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.4940429644426086, Val Loss: 1.1207599747688213
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.4864151177042312, Val Loss: 1.151349739738011
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.47866491374846637, Val Loss: 1.16810758907132
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.47220502328421415, Val Loss: 1.1762239456788985
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.4653448585683302, Val Loss: 1.1736212004787854
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.4594185890161778, Val Loss: 1.1806639293625525
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.4529565852115834, Val Loss: 1.1857866780423802
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.44716062586750643, Val Loss: 1.2067325333418955
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.44210932935371633, Val Loss: 1.222270972966623
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.4372113650756742, Val Loss: 1.2165357604109008
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.43216205135645924, Val Loss: 1.2534817694655604
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.42645855644398556, Val Loss: 1.2519953344249586
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.4221079792831285, Val Loss: 1.280536001382815
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.418473999967875, Val Loss: 1.281835212439889
+Model saved to med_data_zone_experiment/h12_e6_h96_d0_lp0.5_lr0.0001_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h12_e6_h96_d0_lp0.5_lr0.0001_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h12_e6_h96_d0_lp0.5_lr0.0001_ep50/model_config.json
+Starting Experiment: nheads-12, nencoder-12, hdim-72, dropout-0, loss weight-0.5, lr-1e-05, epochs-50
+# Params: 406896
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.6881893029285655, Val Loss: 1.4930764400425502
+Starting epoch: 1
+Epoch 2/50, Train Loss: 1.4479380565549547, Val Loss: 1.4132338305299805
+Starting epoch: 2
+Epoch 3/50, Train Loss: 1.1805822696971593, Val Loss: 1.039217784312046
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.9829391168056352, Val Loss: 0.9461029666098093
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.9196481047556604, Val Loss: 0.9139560461044312
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8936052005405055, Val Loss: 0.8929209058457932
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8798006181962608, Val Loss: 0.8834466653017112
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8703351957541346, Val Loss: 0.8771759693402188
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8638093575020444, Val Loss: 0.8715152684066196
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.8590044363722064, Val Loss: 0.8665182289181609
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.8543718558051608, Val Loss: 0.8659582987088801
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.8506815376232224, Val Loss: 0.8617593062247586
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.8478683751197894, Val Loss: 0.8586327013336204
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.844059016159907, Val Loss: 0.8567820504930906
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.8417581032127236, Val Loss: 0.8546689945332547
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.8389909902409299, Val Loss: 0.8532541356844143
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.8368500230205171, Val Loss: 0.8506451274923603
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.8344743139003761, Val Loss: 0.8495649043374961
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.8326284359615652, Val Loss: 0.8480631364283978
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.8306233239380719, Val Loss: 0.8480871102430325
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.8294203058825307, Val Loss: 0.8466486470146557
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.8274166268089905, Val Loss: 0.8458763951775963
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.8258827485332165, Val Loss: 0.8428772269629943
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.824629440175058, Val Loss: 0.8467967117742328
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.8232119938086416, Val Loss: 0.8424658752808393
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.8216924168929441, Val Loss: 0.8419891997504917
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.8206050366586315, Val Loss: 0.8408931141947441
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.8196323806053707, Val Loss: 0.8419286564528199
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.8183450868312117, Val Loss: 0.8394051448046418
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.8171126521755594, Val Loss: 0.8428322440197777
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.8159108051930316, Val Loss: 0.8395906690937233
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.814876720873829, Val Loss: 0.8402711004346762
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.8141445866330564, Val Loss: 0.8370882778900648
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.8129167273637206, Val Loss: 0.8364310573543247
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.8118816285181623, Val Loss: 0.8374826584068713
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.8113599356056262, Val Loss: 0.839603993683638
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.8105016157548134, Val Loss: 0.8348954947267659
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.8095741998149644, Val Loss: 0.8350250529219627
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.8089345330382246, Val Loss: 0.8351174123525095
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.808040406080952, Val Loss: 0.835741952728543
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.8070927276643293, Val Loss: 0.8353574880107045
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.8064423739972801, Val Loss: 0.8343732920929691
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.805757245430811, Val Loss: 0.8336862377270302
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.8048091669705012, Val Loss: 0.8365654577381543
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.8041190905917581, Val Loss: 0.8325183731356878
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.8031721337611242, Val Loss: 0.8339592535007726
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.802713206913381, Val Loss: 0.8384362460057349
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.8019339725077466, Val Loss: 0.8331851462450258
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.8012051312752326, Val Loss: 0.8348615013844636
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.800671743661886, Val Loss: 0.8343261629015054
+Model saved to med_data_zone_experiment/h12_e12_h72_d0_lp0.5_lr1e-05_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h12_e12_h72_d0_lp0.5_lr1e-05_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h12_e12_h72_d0_lp0.5_lr1e-05_ep50/model_config.json
+Starting Experiment: nheads-12, nencoder-12, hdim-72, dropout-0, loss weight-0.5, lr-0.0001, epochs-50
+# Params: 406896
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.2504535138324984, Val Loss: 0.9087013279088525
+Starting epoch: 1
+Epoch 2/50, Train Loss: 0.8711179847643955, Val Loss: 0.865237574278215
+Starting epoch: 2
+Epoch 3/50, Train Loss: 0.8469528268345021, Val Loss: 0.8578414425680241
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.8354578130221392, Val Loss: 0.8415208222755858
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.8265481068352168, Val Loss: 0.8399467417097056
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8203103191813711, Val Loss: 0.8321579775867965
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8151026390939481, Val Loss: 0.8362206172085997
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.80994962797462, Val Loss: 0.8327494304974291
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.8049566723899887, Val Loss: 0.8270225057204856
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.8007485098239783, Val Loss: 0.8281341490943206
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.7960270286139128, Val Loss: 0.8254644656916007
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.7916372641450975, Val Loss: 0.8255561197713641
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.7869021867712339, Val Loss: 0.8289797919380778
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.7821749627715531, Val Loss: 0.8340411208958112
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.7773422203002229, Val Loss: 0.8303254320178938
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.7723065897994739, Val Loss: 0.8347427581525076
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.7663258242368949, Val Loss: 0.8401047552847635
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.760009917723393, Val Loss: 0.8389650411406424
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.7529716793808608, Val Loss: 0.8415175947912108
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.7453922842297268, Val Loss: 0.8469294791963288
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.7366276562495938, Val Loss: 0.8575211610106624
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.72823792306626, Val Loss: 0.8635663557428694
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.7181677439085528, Val Loss: 0.8854660289696884
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.709334016355493, Val Loss: 0.8744599775015565
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.6983973517011142, Val Loss: 0.886182638405879
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.6872753946869081, Val Loss: 0.9019154224077394
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.6763170055347788, Val Loss: 0.8968355754501052
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.6655322553200175, Val Loss: 0.9087336198730847
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.655151004565157, Val Loss: 0.9320728612007328
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.6443093548187071, Val Loss: 0.9503978151918244
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.6331164146901807, Val Loss: 0.9373686753995087
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.6227764963470086, Val Loss: 0.9553053317836165
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.6126577213512329, Val Loss: 0.9718179874619577
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.602056607157462, Val Loss: 0.9848384565058126
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.5923570116901561, Val Loss: 0.9886702540947598
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.5831736926259679, Val Loss: 1.0172293324813366
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.5749060492629634, Val Loss: 1.010733392207131
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.5654038714458451, Val Loss: 1.0298585213682534
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.5571631895609349, Val Loss: 1.0239698158540187
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.5502438139714904, Val Loss: 1.024889946180674
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.5410277712913906, Val Loss: 1.055113226240904
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.5329912243338476, Val Loss: 1.0686744591023059
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.5260497598578815, Val Loss: 1.0760616065602222
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.5185231509707579, Val Loss: 1.0744594040156634
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.5118708596990829, Val Loss: 1.0900366042610135
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.5059208541591461, Val Loss: 1.112113191463977
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.4989932425414162, Val Loss: 1.1112675491449855
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.4931731708504487, Val Loss: 1.11408338090644
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.48713888176232106, Val Loss: 1.1195975165549046
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.4824295082647592, Val Loss: 1.142108717234976
+Model saved to med_data_zone_experiment/h12_e12_h72_d0_lp0.5_lr0.0001_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h12_e12_h72_d0_lp0.5_lr0.0001_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h12_e12_h72_d0_lp0.5_lr0.0001_ep50/model_config.json
+Starting Experiment: nheads-12, nencoder-12, hdim-96, dropout-0, loss weight-0.5, lr-1e-05, epochs-50
+# Params: 713016
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.6587224988625253, Val Loss: 1.4757514037547177
+Starting epoch: 1
+Epoch 2/50, Train Loss: 1.4272064802429778, Val Loss: 1.4165603047946054
+Starting epoch: 2
+Epoch 3/50, Train Loss: 1.3655614032792995, Val Loss: 1.2194979993718036
+Starting epoch: 3
+Epoch 4/50, Train Loss: 1.0031556987079286, Val Loss: 0.9391461833819518
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.9101244719340598, Val Loss: 0.8991626831904458
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8819940068869686, Val Loss: 0.8841443055269042
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8684624882589254, Val Loss: 0.8733276678461059
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.8601856381327823, Val Loss: 0.8661528766942391
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.853476364623861, Val Loss: 0.8755246721158899
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.8486937995369377, Val Loss: 0.859332356134584
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.8440754773206891, Val Loss: 0.8569929038918552
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.8401785061217758, Val Loss: 0.8538076709450297
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.8368597724852, Val Loss: 0.8500410572230073
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.8340077136107549, Val Loss: 0.8480221242783967
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.8304726621596344, Val Loss: 0.8469231105515472
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.8279746889315945, Val Loss: 0.846121196832538
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.8258473807328883, Val Loss: 0.844543423074532
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.8235411845249457, Val Loss: 0.8418277439306697
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.821309542410726, Val Loss: 0.8407349618410067
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.8196601856707524, Val Loss: 0.8402219641016234
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.817885526088698, Val Loss: 0.8476840324114984
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.8163633997837075, Val Loss: 0.8395690086215013
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.8147742854809285, Val Loss: 0.8378565652748284
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.8132797972025931, Val Loss: 0.8362075078382443
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.8122198425006164, Val Loss: 0.8356730211594484
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.8103240011759361, Val Loss: 0.8370587936850566
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.8089945400221866, Val Loss: 0.835777554106205
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.807958023530577, Val Loss: 0.8343120814025708
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.8067476934078615, Val Loss: 0.836667278979687
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.8055492971174725, Val Loss: 0.8338085946709639
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.804350064942059, Val Loss: 0.8344263246587682
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.8030944221763706, Val Loss: 0.8366123258149195
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.8023721225301174, Val Loss: 0.8317442768781568
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.8010639080505516, Val Loss: 0.833037937094163
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.7999604184466457, Val Loss: 0.8360642006925512
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.7988464591944381, Val Loss: 0.8325944703594342
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.7980049870571378, Val Loss: 0.8334385575569472
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.7965848562312552, Val Loss: 0.8364336665553025
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.7956998187159389, Val Loss: 0.8331166416384767
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.7944387471935977, Val Loss: 0.8341762975393983
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.7939663235838481, Val Loss: 0.8334164662083019
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.7928231517254491, Val Loss: 0.8317769298812351
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.7915696801870403, Val Loss: 0.8331248250981944
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.7907362993019237, Val Loss: 0.8353138976646362
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.7893967763780294, Val Loss: 0.8313635235224589
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.7883743981818044, Val Loss: 0.8378678433657217
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.7874207756434078, Val Loss: 0.8339893190369218
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.786374835217162, Val Loss: 0.8333966474233965
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.7851198016735407, Val Loss: 0.8371495350440985
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.7841158442504774, Val Loss: 0.8354762215126287
+Model saved to med_data_zone_experiment/h12_e12_h96_d0_lp0.5_lr1e-05_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h12_e12_h96_d0_lp0.5_lr1e-05_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h12_e12_h96_d0_lp0.5_lr1e-05_ep50/model_config.json
+Starting Experiment: nheads-12, nencoder-12, hdim-96, dropout-0, loss weight-0.5, lr-0.0001, epochs-50
+# Params: 713016
+Starting epoch: 0
+Epoch 1/50, Train Loss: 1.085011234269972, Val Loss: 0.8786502832099959
+Starting epoch: 1
+Epoch 2/50, Train Loss: 0.8506876243068812, Val Loss: 0.8526242009568372
+Starting epoch: 2
+Epoch 3/50, Train Loss: 0.8356295785975381, Val Loss: 0.8472894751579554
+Starting epoch: 3
+Epoch 4/50, Train Loss: 0.8246683823542139, Val Loss: 0.8365724059867229
+Starting epoch: 4
+Epoch 5/50, Train Loss: 0.8164934721764581, Val Loss: 0.8361419396241273
+Starting epoch: 5
+Epoch 6/50, Train Loss: 0.8100156887785995, Val Loss: 0.8333808435338959
+Starting epoch: 6
+Epoch 7/50, Train Loss: 0.8031899552913745, Val Loss: 0.8303644418366587
+Starting epoch: 7
+Epoch 8/50, Train Loss: 0.7967967352448923, Val Loss: 0.8262249092494226
+Starting epoch: 8
+Epoch 9/50, Train Loss: 0.7913511924202761, Val Loss: 0.8253976124573174
+Starting epoch: 9
+Epoch 10/50, Train Loss: 0.7850364166166003, Val Loss: 0.8290919059353197
+Starting epoch: 10
+Epoch 11/50, Train Loss: 0.7783332305649916, Val Loss: 0.8300952191791898
+Starting epoch: 11
+Epoch 12/50, Train Loss: 0.77042645270046, Val Loss: 0.8310516177514679
+Starting epoch: 12
+Epoch 13/50, Train Loss: 0.7622914279484975, Val Loss: 0.8428308701611404
+Starting epoch: 13
+Epoch 14/50, Train Loss: 0.7537530942278455, Val Loss: 0.8349775777349381
+Starting epoch: 14
+Epoch 15/50, Train Loss: 0.742785186155236, Val Loss: 0.8489133676272145
+Starting epoch: 15
+Epoch 16/50, Train Loss: 0.7312443597667256, Val Loss: 0.8500379149912038
+Starting epoch: 16
+Epoch 17/50, Train Loss: 0.7181173554385624, Val Loss: 0.8646366378006827
+Starting epoch: 17
+Epoch 18/50, Train Loss: 0.7040687274074203, Val Loss: 0.8826991310691623
+Starting epoch: 18
+Epoch 19/50, Train Loss: 0.6895722149196546, Val Loss: 0.8933918051700425
+Starting epoch: 19
+Epoch 20/50, Train Loss: 0.6731009538022, Val Loss: 0.9004418384652757
+Starting epoch: 20
+Epoch 21/50, Train Loss: 0.6580146236813281, Val Loss: 0.9330507065562405
+Starting epoch: 21
+Epoch 22/50, Train Loss: 0.6407195859628835, Val Loss: 0.938739754111996
+Starting epoch: 22
+Epoch 23/50, Train Loss: 0.6247084803595139, Val Loss: 0.935081008419952
+Starting epoch: 23
+Epoch 24/50, Train Loss: 0.6084915800069064, Val Loss: 0.9453178014898685
+Starting epoch: 24
+Epoch 25/50, Train Loss: 0.5935261383198288, Val Loss: 0.9968813658635229
+Starting epoch: 25
+Epoch 26/50, Train Loss: 0.578638840270876, Val Loss: 0.9953609749795056
+Starting epoch: 26
+Epoch 27/50, Train Loss: 0.5636182470613411, Val Loss: 1.0072467421138454
+Starting epoch: 27
+Epoch 28/50, Train Loss: 0.5505653842793999, Val Loss: 1.022097471043719
+Starting epoch: 28
+Epoch 29/50, Train Loss: 0.53712951164344, Val Loss: 1.0383820474060335
+Starting epoch: 29
+Epoch 30/50, Train Loss: 0.5250131927908532, Val Loss: 1.0669767932688936
+Starting epoch: 30
+Epoch 31/50, Train Loss: 0.511867696942309, Val Loss: 1.0725975032248045
+Starting epoch: 31
+Epoch 32/50, Train Loss: 0.5003867726028749, Val Loss: 1.0771638513354806
+Starting epoch: 32
+Epoch 33/50, Train Loss: 0.4907584450433871, Val Loss: 1.0861555498834052
+Starting epoch: 33
+Epoch 34/50, Train Loss: 0.48024065217902234, Val Loss: 1.090000250675358
+Starting epoch: 34
+Epoch 35/50, Train Loss: 0.47034903090803654, Val Loss: 1.134898840375272
+Starting epoch: 35
+Epoch 36/50, Train Loss: 0.46170629692174786, Val Loss: 1.1494213417883052
+Starting epoch: 36
+Epoch 37/50, Train Loss: 0.4530277250473682, Val Loss: 1.1323627580725264
+Starting epoch: 37
+Epoch 38/50, Train Loss: 0.44472843274615165, Val Loss: 1.166867030865116
+Starting epoch: 38
+Epoch 39/50, Train Loss: 0.4366617974140667, Val Loss: 1.1708010480802722
+Starting epoch: 39
+Epoch 40/50, Train Loss: 0.4307185724675342, Val Loss: 1.1797849513858185
+Starting epoch: 40
+Epoch 41/50, Train Loss: 0.42259199520892277, Val Loss: 1.1884155622625385
+Starting epoch: 41
+Epoch 42/50, Train Loss: 0.4164369238264365, Val Loss: 1.2258413797428918
+Starting epoch: 42
+Epoch 43/50, Train Loss: 0.40992228488205734, Val Loss: 1.2164904950562418
+Starting epoch: 43
+Epoch 44/50, Train Loss: 0.40393312852026664, Val Loss: 1.240313918141871
+Starting epoch: 44
+Epoch 45/50, Train Loss: 0.39852690435045024, Val Loss: 1.2382373428484663
+Starting epoch: 45
+Epoch 46/50, Train Loss: 0.3932530465100027, Val Loss: 1.2478557961090295
+Starting epoch: 46
+Epoch 47/50, Train Loss: 0.3875837528453327, Val Loss: 1.2777290433885766
+Starting epoch: 47
+Epoch 48/50, Train Loss: 0.38317069516259666, Val Loss: 1.269769584048083
+Starting epoch: 48
+Epoch 49/50, Train Loss: 0.37761886018699525, Val Loss: 1.2719760053051103
+Starting epoch: 49
+Epoch 50/50, Train Loss: 0.37312578199946417, Val Loss: 1.2777991776114777
+Model saved to med_data_zone_experiment/h12_e12_h96_d0_lp0.5_lr0.0001_ep50/transformer_model.pth
+Loss Plot saved to med_data_zone_experiment/h12_e12_h96_d0_lp0.5_lr0.0001_ep50/loss_plot.png
+Config saved to med_data_zone_experiment/h12_e12_h96_d0_lp0.5_lr0.0001_ep50/model_config.json
