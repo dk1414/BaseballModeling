@@ -12,7 +12,7 @@ class BaseballDataset(Dataset):
         self.set_seed()
         self.config = self.load_config(config_path)
 
-
+        self.data = self.fix_hit_loc(data)
         self.data = self.add_mask_dimensions(data)
         
         
@@ -63,6 +63,18 @@ class BaseballDataset(Dataset):
     def get_mean_values(self):
         continuous_label_columns = list(set(self.label_columns) - set(self.categorical_columns))
         return self.data[continuous_label_columns].mean().to_dict()
+    
+    def fix_hit_loc(self, data):
+
+        #quick fix for hit_location 2 issue where in the processed data, a stikeout has hit_location_2 true but we expect hit_location_0 to be true
+
+        #this should do it
+        data.loc[data['events_strikeout'] == True, 'hit_location_0.0'] = True
+        data.loc[data['events_strikeout'] == True, 'hit_location_2.0'] = False
+
+        return data
+
+
     
     def add_mask_dimensions(self, data):
         config = self.config
