@@ -80,11 +80,16 @@ class DataProcessor:
         print(f"Processed Data Shape after convert_data_types: {self.processed_data.shape}")
 
     def standardize_or_normalize(self):
-        scaler = StandardScaler()
+        
         for column, settings in self.config.items():
             if settings.get('standardize', False):
+                scaler = StandardScaler()
+   
+
                 self.processed_data[[column]] = scaler.fit_transform(self.processed_data[[column]])
                 self.scalers[column] = scaler
+
+      
 
         print(f"Processed Data Shape after standardize_or_normalize: {self.processed_data.shape}")
     
