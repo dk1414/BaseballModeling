@@ -35,7 +35,7 @@ def pull_data(start_date, end_date):
 
     full_data.drop_duplicates(inplace=True)
 
-    data_path = f'statcast_{start_date}_{end_date}.csv'
+    data_path = f'statcast_2015-2024.csv'
     full_data.to_csv(data_path, index=False)
 
     return data_path
@@ -86,8 +86,8 @@ if __name__ == "__main__":
     else:
         data_path = pull_data(start_date, end_date)
 
-    print("Processing Data")
-    process_data(data_path, config_path, start_date, end_date)
+    #print("Processing Data")
+    #process_data(data_path, config_path, start_date, end_date)
 
 
     
