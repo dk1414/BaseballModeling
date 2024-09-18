@@ -1,0 +1,78 @@
+nohup: ignoring input
+Device: cuda
+Loading Data
+Train Shape: (492992, 93)
+Valid Shape: (231542, 93)
+Creating Datasets
+Train Label Cols: tensor([ 0,  8,  9, 17]), [tensor([21, 22, 23, 24, 25, 26, 27, 28, 29, 30]), tensor([65, 66, 67, 68, 69, 70, 71, 72, 73, 74])]
+Valid Label Cols: tensor([ 0,  8,  9, 17]), [tensor([21, 22, 23, 24, 25, 26, 27, 28, 29, 30]), tensor([65, 66, 67, 68, 69, 70, 71, 72, 73, 74])]
+Creating Dataloaders
+Starting Experiment: nheads-6, nencoder-12, hdim-96, dropout-0, loss weight-0.5, lr-1e-05, epochs-30
+# Params: 713016
+Starting epoch: 0
+/home/dck5549/miniconda3/envs/BaseballEnv/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/home/dck5549/miniconda3/envs/BaseballEnv/lib/python3.12/site-packages/torch/nn/modules/linear.py:117: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /opt/conda/conda-bld/pytorch_1720538455419/work/aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return F.linear(input, self.weight, self.bias)
+Epoch 1/30, Train Loss: 1.6769306794518517, Val Loss: 1.472373183063
+Starting epoch: 1
+Epoch 2/30, Train Loss: 1.4159131324716976, Val Loss: 1.3907525422256117
+Starting epoch: 2
+Epoch 3/30, Train Loss: 1.3537268943729854, Val Loss: 1.308630353711933
+Starting epoch: 3
+Epoch 4/30, Train Loss: 1.0811429115633169, Val Loss: 0.9897947002180739
+Starting epoch: 4
+Epoch 5/30, Train Loss: 0.9481190623272033, Val Loss: 0.9310446826019728
+Starting epoch: 5
+Epoch 6/30, Train Loss: 0.9084076259817396, Val Loss: 0.9050315927735643
+Starting epoch: 6
+Epoch 7/30, Train Loss: 0.8881630311409633, Val Loss: 0.8895466877201389
+Starting epoch: 7
+Epoch 8/30, Train Loss: 0.8743275814467952, Val Loss: 0.879474730936089
+Starting epoch: 8
+Epoch 9/30, Train Loss: 0.864243674491133, Val Loss: 0.8718555509355027
+Starting epoch: 9
+Epoch 10/30, Train Loss: 0.8560524161372866, Val Loss: 0.8661711166876589
+Starting epoch: 10
+Epoch 11/30, Train Loss: 0.8497323575119178, Val Loss: 0.8628925279730317
+Starting epoch: 11
+Epoch 12/30, Train Loss: 0.8444796918048745, Val Loss: 0.856604231575321
+Starting epoch: 12
+Epoch 13/30, Train Loss: 0.8398990156749885, Val Loss: 0.8536232072063265
+Starting epoch: 13
+Epoch 14/30, Train Loss: 0.8360765621420883, Val Loss: 0.8507458288545553
+Starting epoch: 14
+Epoch 15/30, Train Loss: 0.8328578681463287, Val Loss: 0.8474157549483927
+Starting epoch: 15
+Epoch 16/30, Train Loss: 0.8297905953512306, Val Loss: 0.8460935217279919
+Starting epoch: 16
+Epoch 17/30, Train Loss: 0.8271122148349171, Val Loss: 0.8437986317914346
+Starting epoch: 17
+Epoch 18/30, Train Loss: 0.8249818007506076, Val Loss: 0.8438084119920096
+Starting epoch: 18
+Epoch 19/30, Train Loss: 0.8227465526866061, Val Loss: 0.8428270595438908
+Starting epoch: 19
+Epoch 20/30, Train Loss: 0.8207247287389778, Val Loss: 0.8397840696866112
+Starting epoch: 20
+Epoch 21/30, Train Loss: 0.8189651254387129, Val Loss: 0.8406266316857641
+Starting epoch: 21
+Epoch 22/30, Train Loss: 0.817395651801711, Val Loss: 0.8393324269466318
+Starting epoch: 22
+Epoch 23/30, Train Loss: 0.815807905722232, Val Loss: 0.8390898984033248
+Starting epoch: 23
+Epoch 24/30, Train Loss: 0.8142138820318948, Val Loss: 0.8367091994840286
+Starting epoch: 24
+Epoch 25/30, Train Loss: 0.8129217658724104, Val Loss: 0.834419362462325
+Starting epoch: 25
+Epoch 26/30, Train Loss: 0.8116191640496254, Val Loss: 0.8342088078057146
+Starting epoch: 26
+Epoch 27/30, Train Loss: 0.810376367966334, Val Loss: 0.8385476525549944
+Starting epoch: 27
+Epoch 28/30, Train Loss: 0.8093818794403758, Val Loss: 0.8322830011992786
+Starting epoch: 28
+Epoch 29/30, Train Loss: 0.8080667819473005, Val Loss: 0.8350160756724418
+Starting epoch: 29
+Epoch 30/30, Train Loss: 0.8070019624062947, Val Loss: 0.8318832663097823
+Model saved to hit_loc_fixed_100/h6_e12_h96_d0_lp0.5_lr1e-05_ep30/transformer_model.pth
+Loss Plot saved to hit_loc_fixed_100/h6_e12_h96_d0_lp0.5_lr1e-05_ep30/loss_plot.png
+Config saved to hit_loc_fixed_100/h6_e12_h96_d0_lp0.5_lr1e-05_ep30/model_config.json
