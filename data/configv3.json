@@ -95,7 +95,8 @@
 
     "balls": {
         "categorical": "True",
-        "missing_value_strategy": "mode"
+        "missing_value_strategy": "mode",
+        "drop_values": [4]
     },
 
     "strikes": {
