@@ -131,7 +131,7 @@ class BaseballDataset(Dataset):
         grouped = self.data.groupby('batter')
         
         for batter, group in grouped:
-            group = group.sort_values(by=['game_date', 'at_bat_number'])
+            group = group.sort_values(by=['game_date', 'at_bat_number', 'pitch_number'])
             indices = group.index.tolist()
             
             for i in range(len(indices) - self.sequence_length):
