@@ -1,0 +1,18 @@
+{
+    "num_heads": 6,
+    "num_encoder_layers": 12,
+    "hidden_dim": 96,
+    "sequence_length": 200,
+    "dropout": 0,
+    "batch_size": 256,
+    "weight_param": 0.5,
+    "num_epochs": 50,
+    "learning_rate": 1e-05,
+    "num_workers": 8,
+    "model_save_dir": "fixed_94_200",
+    "config_path": "../data/configv3.json",
+    "train_data_path": "../data/med_train_94.csv",
+    "valid_data_path": "../data/med_test_94.csv",
+    "input_dim": 87,
+    "output_dim": 24
+}

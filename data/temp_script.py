@@ -30,4 +30,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    #main()
+
+    print(pd.read_csv('med_train.csv').head(10))
+
+
+    
+
