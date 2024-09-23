@@ -16,23 +16,23 @@ def main():
 
 
     raw_data = pd.read_csv("full_cleaned_94.csv")
-    start_date = pd.to_datetime("2017-01-01")
-    end_date = pd.to_datetime("2018-01-01")
+    start_date = pd.to_datetime("2014-01-01")
+    end_date = pd.to_datetime("2023-01-01")
     raw_data['game_date'] = pd.to_datetime(raw_data['game_date'])
     total_days = (end_date - start_date).days
-    split_date = pd.to_datetime(start_date) + timedelta(days=int(total_days * 0.6))
+    split_date = pd.to_datetime(start_date) + timedelta(days=int(total_days * 0.8))
 
     # Split data into train and validation sets
     train = raw_data[(raw_data['game_date'] > start_date) & (raw_data['game_date'] < split_date)]
     valid = raw_data[(raw_data['game_date'] > split_date) & (raw_data['game_date'] < end_date)]
-    train.to_csv(f"med_train_94.csv", index=False)
-    valid.to_csv(f"med_test_94.csv", index=False)
+    train.to_csv(f"large_train_94.csv", index=False)
+    valid.to_csv(f"large_test_94.csv", index=False)
 
 
 if __name__ == "__main__":
-    #main()
+    main()
 
-    print(pd.read_csv('med_train.csv').head(10))
+    #print(pd.read_csv('med_train.csv').head(10))
 
 
     

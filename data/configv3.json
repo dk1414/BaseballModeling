@@ -29,6 +29,7 @@
         "metadata": "True",
         "missing_value_strategy": "drop"
     },
+    
     "zone": {
         "categorical": "True",
         "missing_value_strategy": "drop"

@@ -166,13 +166,13 @@ class TransformerHelper:
                 #cat continuous and categorical outputs together
                 preds = cont_output
                 for probs in cat_probs:
-                    preds = np.concatenate((preds, probs),axis=1)
+                    preds = np.concatenate((preds, probs),axis=(preds.ndim != 1) * 1)
                 
                 preds_array.append(preds)
 
                 true = cont_targets
                 for probs in cat_target_probs:
-                    true = np.concatenate((true, probs),axis=1)
+                    true = np.concatenate((true, probs),axis=(preds.ndim != 1) * 1)
                 
                 true_array.append(true)
 

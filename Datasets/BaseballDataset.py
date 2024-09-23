@@ -134,7 +134,7 @@ class BaseballDataset(Dataset):
             group = group.sort_values(by=['game_date', 'at_bat_number', 'pitch_number'])
             indices = group.index.tolist()
             
-            for i in range(len(indices) - self.sequence_length):
+            for i in range(len(indices) - self.sequence_length + (len(indices) >= self.sequence_length) * 1):
                 sequence_indices = indices[i:i + self.sequence_length]
                 self.sequences.append(torch.LongTensor(sequence_indices))
 
